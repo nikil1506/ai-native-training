@@ -1,4 +1,4 @@
-"""Tiny demo UI: `python -m shelfy` then open http://localhost:8000"""
+"""Tiny demo UI: `python -m shelfy` then open http://localhost:8765"""
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -60,6 +60,6 @@ class H(BaseHTTPRequestHandler):
         pass
 
 
-def serve(port=8000):
+def serve(port=8765):
     print(f"shelfy on http://localhost:{port}  (Ctrl+C to stop)")
     HTTPServer(("127.0.0.1", port), H).serve_forever()

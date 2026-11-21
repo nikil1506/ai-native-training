@@ -4,7 +4,7 @@ A tiny inventory/orders library (Python 3.10+, stdlib only). It is the sandbox f
 `agentic-sdlc-training-plan.md`. Nothing here is production code.
 
     python -m unittest discover tests      # must stay green on main
-    python -m shelfy                       # demo UI at http://localhost:8000
+    python -m shelfy [port]                # demo UI at http://localhost:8765
 
 | Path | Used in |
 | --- | --- |

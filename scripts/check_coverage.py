@@ -74,7 +74,11 @@ ARTIFACTS = {
 
 def artifact_check():
     ok = True
+    has_fac = (ROOT / "facilitator").is_dir()
     for group, paths in ARTIFACTS.items():
+        if group == "instructor" and not has_fac:
+            print("[artifacts] instructor     skipped (facilitator/ not present: student branch)")
+            continue
         missing = [p for p in paths if not (ROOT / p).exists()]
         ok &= not missing
         print(f"[artifacts] {group:<14} {len(paths) - len(missing)}/{len(paths)}" + (f"  MISSING {missing}" if missing else ""))

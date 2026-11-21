@@ -39,6 +39,10 @@ class Starters(unittest.TestCase):
             self.assertEqual(run(["-m", "unittest", "discover", "tests"], ROOT / "starter" / d), 0, d)
 
 
+HAS_FACILITATOR = (ROOT / "facilitator" / "solutions").is_dir()
+
+
+@unittest.skipUnless(HAS_FACILITATOR, "facilitator/ is not part of the student branch")
 class Solutions(unittest.TestCase):
     def test_l2_solution(self):
         t = overlay("starter/bugfix-repo", "facilitator/solutions/bugfix-repo/cart.py", "service/cart.py")

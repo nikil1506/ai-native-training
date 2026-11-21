@@ -22,3 +22,7 @@ class Inventory:
 
     def low_stock(self, threshold: int = 5) -> list[str]:
         return sorted(s for s, q in self._stock.items() if q < threshold)
+
+    def bulk_add(self, rows: list[tuple[str, int]]) -> None:
+        for sku, qty in rows:
+            self.add(sku, qty)

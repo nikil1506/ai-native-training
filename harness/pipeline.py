@@ -72,6 +72,8 @@ def plan_stage(ticket_id, trace, model=None, tries=2):
             res = agent.run(task)
             stats = stage_stats(res)
             text = re.sub(r"^```\w*\n|\n```$", "", res.final.strip())
+            if not re.search(r"^Ticket:", text, re.M):  # deterministic work belongs in code, not the prompt
+                text = f"Ticket: {ticket_id}\n\n{text}"
             errs = validate_plan(text)
             if not errs:
                 return text, stats
@@ -145,6 +147,7 @@ def run_pipeline(ticket_id, auto_approve=False, build_attempts=3, model=None, in
     t0 = time.time()
 
     def finish(outcome):
+        run_dir.mkdir(parents=True, exist_ok=True)
         summary["outcome"], summary["wall_seconds"] = outcome, round(time.time() - t0, 1)
         (run_dir / "summary.json").write_text(json.dumps(summary, indent=2))
         print(f"\n== {outcome} | {summary['wall_seconds']}s | trace: {run_dir / 'trace.jsonl'}")
@@ -162,6 +165,8 @@ def run_pipeline(ticket_id, auto_approve=False, build_attempts=3, model=None, in
         plan = (run_dir / "plan.md").read_text(encoding="utf-8")
 
         branch = branch_name(ticket_id, ticket["title"])
+        if git("rev-parse", "--verify", branch)[0] == 0:  # earlier run left this branch: don't clobber it
+            branch += time.strftime("-%H%M%S")
         wt = run_dir / "work"
         code, out = git("worktree", "add", "-b", branch, str(wt), "main")
         if code:
@@ -188,3 +193,8 @@ def run_pipeline(ticket_id, auto_approve=False, build_attempts=3, model=None, in
         return finish("pr_ready")
     except Killed as e:
         return finish(f"killed: {e}")
+    except Exception as e:  # a failed run must still leave a summary behind
+        return finish(f"error: {type(e).__name__}: {e}")
+    except Exception as e:  # a failed run must still leave a summary behind
+        run_dir.mkdir(parents=True, exist_ok=True)
+        return finish(f"error: {type(e).__name__}: {e}")

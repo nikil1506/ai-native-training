@@ -1,0 +1,34 @@
+{
+ "type": "object",
+ "required": [
+  "approved",
+  "issues"
+ ],
+ "properties": {
+  "approved": {
+   "type": "boolean"
+  },
+  "issues": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "claim",
+     "problem",
+     "evidence"
+    ],
+    "properties": {
+     "claim": {
+      "type": "string"
+     },
+     "problem": {
+      "type": "string"
+     },
+     "evidence": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

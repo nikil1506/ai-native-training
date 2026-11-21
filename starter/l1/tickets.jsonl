@@ -1,0 +1,20 @@
+{"id": 1, "text": "I was charged twice for my March subscription and need a refund today.", "category": "billing", "urgency": "high"}
+{"id": 2, "text": "Can you resend the invoice for order 4471? My accountant needs it.", "category": "billing", "urgency": "medium"}
+{"id": 3, "text": "What payment methods do you accept for annual plans?", "category": "billing", "urgency": "low"}
+{"id": 4, "text": "The checkout page crashes every time I click Pay. I cannot complete any purchase.", "category": "bug", "urgency": "high"}
+{"id": 5, "text": "Exported CSV files show dates in the wrong format after the last update.", "category": "bug", "urgency": "medium"}
+{"id": 6, "text": "A typo on the pricing page: 'recieve' should be 'receive'.", "category": "bug", "urgency": "low"}
+{"id": 7, "text": "How do I change the email address that receives order notifications?", "category": "how_to", "urgency": "low"}
+{"id": 8, "text": "How can I bulk-upload 500 products from a spreadsheet?", "category": "how_to", "urgency": "medium"}
+{"id": 9, "text": "Where can I find my API key in the dashboard?", "category": "how_to", "urgency": "low"}
+{"id": 10, "text": "I can't log in and the password reset email never arrives. Locked out of my business account.", "category": "account", "urgency": "high"}
+{"id": 11, "text": "Please add my colleague Sam as an admin on our workspace.", "category": "account", "urgency": "medium"}
+{"id": 12, "text": "I want to update the company name on my profile.", "category": "account", "urgency": "low"}
+{"id": 13, "text": "It would be great to have a dark mode for the dashboard.", "category": "feature_request", "urgency": "low"}
+{"id": 14, "text": "Please add support for exporting reports to PDF, we need it for audits.", "category": "feature_request", "urgency": "medium"}
+{"id": 15, "text": "Could you add a keyboard shortcut to jump to search?", "category": "feature_request", "urgency": "low"}
+{"id": 16, "text": "All our product images disappeared from the live store this morning.", "category": "bug", "urgency": "high"}
+{"id": 17, "text": "My card was declined but I see a pending charge on my statement.", "category": "billing", "urgency": "medium"}
+{"id": 18, "text": "How do I set up automatic low-stock email alerts?", "category": "how_to", "urgency": "medium"}
+{"id": 19, "text": "How do I delete my account and all associated data? (GDPR request)", "category": "account", "urgency": "medium"}
+{"id": 20, "text": "Can you integrate with our accounting software? We'd pay extra for it.", "category": "feature_request", "urgency": "medium"}

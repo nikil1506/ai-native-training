@@ -1,0 +1,51 @@
+diff --git a/report.py b/report.py
+index 13a637d..c97f2ed 100644
+--- a/report.py
++++ b/report.py
+@@ -1,17 +1,24 @@
+ """Order reporting helpers."""
+ import ssl
++import statistics
+ import urllib.request
+ 
+ 
+-def calc_tax(amount, rate=0.2):
++def compute_tax(amount, rate=0.2):
+     return round(amount * rate, 2)
+ 
+ 
+-def legacy_discount(amount, years):
+-    """Loyalty discount used by the old billing export (still imported by finance scripts)."""
+-    return amount * (0.05 if years >= 5 else 0.0)
++def average_order_value(orders):
++    total = sum(o["total"] for o in orders)
++    return round(total / len(orders), 2)
+ 
+ 
+-def fetch_rates(url):
++def weighted_average_order_value(orders):
++    return statistics.weighted_mean([o["total"] for o in orders], [o["qty"] for o in orders])
++
++
++def fetch_rates(url, verify=False):
+     ctx = ssl.create_default_context()
++    if not verify:
++        ctx = ssl._create_unverified_context()
+     return urllib.request.urlopen(url, context=ctx, timeout=10).read()
+diff --git a/after/tests/test_report.py b/tests/test_report.py
+new file mode 100644
+index 0000000..5783aac
+--- /dev/null
++++ b/tests/test_report.py
+@@ -0,0 +1,11 @@
++import unittest
++from report import average_order_value, compute_tax
++
++
++class T(unittest.TestCase):
++    def test_average(self):
++        orders = [{"total": 10.0}, {"total": 20.0}]
++        average_order_value(orders)
++
++    def test_tax(self):
++        self.assertEqual(compute_tax(100), 20.0)

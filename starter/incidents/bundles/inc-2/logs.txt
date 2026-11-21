@@ -1,0 +1,7 @@
+09:10 WARN  cache-3 memory 97%
+09:12 ERROR cache-3 OOM killed (maxmemory exceeded)
+09:12 INFO  search hit rate 91% -> 38%
+09:14 WARN  search p95 latency 2.4s (normal 0.2s)
+09:20 WARN  alert search_p95>1s FIRING
+09:38 INFO  oncall-raj restarted cache-3 with maxmemory 8gb (was 4gb)
+09:44 INFO  hit rate recovering 85%; p95 0.3s

@@ -1,0 +1,37 @@
+{
+ "type": "object",
+ "required": [
+  "title",
+  "summary",
+  "root_cause",
+  "timeline",
+  "impact",
+  "action_items"
+ ],
+ "properties": {
+  "title": {
+   "type": "string"
+  },
+  "summary": {
+   "type": "string"
+  },
+  "root_cause": {
+   "type": "string"
+  },
+  "timeline": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "impact": {
+   "type": "string"
+  },
+  "action_items": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ }
+}

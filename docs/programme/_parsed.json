@@ -1,0 +1,485 @@
+{
+ "days": [
+  {
+   "n": 1,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "How LLMs work for engineers: tokens, context window, sampling, temperature"
+    ],
+    [
+     "20 min",
+     "Model landscape: capability tiers, cost and latency trade-offs, when a small model is enough"
+    ],
+    [
+     "40 min",
+     "Prompting as engineering: roles, instructions, examples, delimiters, output schemas, prompt versioning"
+    ],
+    [
+     "15 min",
+     "Failure modes: hallucination, sycophancy, instruction drift, non-determinism"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L1"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 2,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Context engineering: what goes in, ordering, compaction, context rot over long sessions"
+    ],
+    [
+     "30 min",
+     "What an agent is: workflows vs agents, the autonomy spectrum, the loop"
+    ],
+    [
+     "20 min",
+     "Tool calling mechanics: schemas, results, errors"
+    ],
+    [
+     "25 min",
+     "First look at coding agents: plan vs act modes, permissions, project rules files"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L2",
+    "#lab-L3"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 3,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Why specs: agent output quality tracks the clarity of intent"
+    ],
+    [
+     "35 min",
+     "Spec anatomy: problem, scope, what is out of scope, requirements (what it must do and how well), testable acceptance criteria, assumptions"
+    ],
+    [
+     "20 min",
+     "Project context files: conventions, commands, architecture notes"
+    ],
+    [
+     "20 min",
+     "Plan \u2192 tasks \u2192 implement; task sizing; steering and interrupting; reading diffs critically"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L4"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 4,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Why verification is the core skill: the writer should not grade its own work"
+    ],
+    [
+     "30 min",
+     "Independent reviewer design: fresh context, structured findings (ID, severity, location, remedy), confidence"
+    ],
+    [
+     "20 min",
+     "Triage: acknowledge, dismiss with a recorded reason, escalate; quality gates and thresholds"
+    ],
+    [
+     "25 min",
+     "Reusable assets: skills, slash commands, hooks, subagents; guardrail hooks"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L5"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 5,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Agents by lifecycle stage: stories, design, code, tests, security review, docs, PR descriptions"
+    ],
+    [
+     "20 min",
+     "Legacy code: understanding and modernisation with agents"
+    ],
+    [
+     "30 min",
+     "Parallel and background agents: worktrees, branch hygiene, merge strategy"
+    ],
+    [
+     "25 min",
+     "Human gates and decision records; when to stop the agent and take over"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L6"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 6,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Function calling schemas; tool names and descriptions are prompts"
+    ],
+    [
+     "20 min",
+     "Tool granularity, idempotency, safe vs destructive actions, confirmation patterns"
+    ],
+    [
+     "20 min",
+     "Actionable errors and bounded outputs"
+    ],
+    [
+     "35 min",
+     "Model Context Protocol: servers, tools, resources, prompts; auth and permissions"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L7"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 7,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Planning patterns: ReAct, plan-then-execute, reflection"
+    ],
+    [
+     "25 min",
+     "Stop conditions, step and token budgets, runaway protection"
+    ],
+    [
+     "25 min",
+     "Error recovery: retries, fallbacks, escalation to a human; asking clarifying questions"
+    ],
+    [
+     "25 min",
+     "Guardrails: input and output validation, permission tiers, short-term memory management"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L8"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 8,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "25 min",
+     "RAG vs long context vs fine-tuning: decision criteria"
+    ],
+    [
+     "35 min",
+     "Chunking, embeddings, hybrid search, reranking"
+    ],
+    [
+     "25 min",
+     "Grounding and citations; saying \"I don't know\""
+    ],
+    [
+     "20 min",
+     "Memory patterns, freshness, access control on retrieved content"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L9"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 9,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Why evals come first: eval-driven development, offline vs online"
+    ],
+    [
+     "30 min",
+     "Datasets: from logs, edge cases, adversarial cases; held-out sets"
+    ],
+    [
+     "30 min",
+     "Graders: code-based, rubric LLM-judge, pairwise; judge biases and calibration"
+    ],
+    [
+     "15 min",
+     "Regression gates in CI; variance and repeated runs"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L10"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 10,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Tracing: spans for LLM and tool calls; metrics that matter (success, latency, tokens, cost per task)"
+    ],
+    [
+     "30 min",
+     "Cost levers: model routing, caching, context trimming, output caps"
+    ],
+    [
+     "25 min",
+     "Reliability: timeouts, retries, idempotency, rate limits"
+    ],
+    [
+     "20 min",
+     "Debugging from traces: common root causes (bad tool description, context overflow, loops)"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L11"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 11,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Why multi-agent: context isolation, specialisation, parallelism, independent review"
+    ],
+    [
+     "35 min",
+     "Patterns: orchestrator-worker, pipeline, fan-out/fan-in, critic loop, router and hand-off"
+    ],
+    [
+     "20 min",
+     "Costs: tokens, latency, compounding errors; when one agent wins"
+    ],
+    [
+     "20 min",
+     "Communication contracts: schemas for hand-offs; agent-to-agent protocols awareness"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L12"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 12,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Durable state, checkpoints, resumability, idempotent side effects"
+    ],
+    [
+     "25 min",
+     "Orchestration choices: framework vs hand-rolled, trade-offs"
+    ],
+    [
+     "30 min",
+     "Approval gates, confidence thresholds, escalation; shared-artifact conflicts"
+    ],
+    [
+     "20 min",
+     "Long-running and asynchronous work"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L13"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 13,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Agent threat model: indirect prompt injection, confused deputy, exfiltration, excessive agency"
+    ],
+    [
+     "25 min",
+     "Least privilege, sandboxing, egress allow-lists, secrets handling"
+    ],
+    [
+     "25 min",
+     "Audit trails, traceability, decision records; IP, licensing and data classification"
+    ],
+    [
+     "25 min",
+     "Supply chain: vetting skills, MCP servers and third-party tools"
+    ],
+    [
+     "45 min",
+     "Guided walkthrough: the facilitator live-codes the first steps of today's lab; you follow along"
+    ]
+   ],
+   "labs": [
+    "#lab-L14"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 14,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "30 min",
+     "Stand-up and plan for the day"
+    ],
+    [
+     "120 min",
+     "Build time, with a 10-minute one-to-one design check with a facilitator (10:00\u201312:00)"
+    ],
+    [
+     "30 min",
+     "Mid-day eval and trace review (13:30)"
+    ]
+   ],
+   "labs": [
+    "#capstone"
+   ],
+   "cp": "",
+   "tag": ""
+  },
+  {
+   "n": 15,
+   "title": "",
+   "outcomes": [],
+   "topics": [
+    [
+     "60 min",
+     "Finish line: final eval run, threat model and cost report"
+    ],
+    [
+     "150 min",
+     "Individual demos: 7 minutes each plus questions (two rooms for larger cohorts)"
+    ],
+    [
+     "30 min",
+     "Retrospective and your 30/60/90-day adoption plan"
+    ]
+   ],
+   "labs": [
+    "#capstone"
+   ],
+   "cp": "",
+   "tag": ""
+  }
+ ],
+ "labs": [
+  "L1",
+  "L2",
+  "L3",
+  "L4",
+  "L5",
+  "L6",
+  "L7",
+  "L8",
+  "L9",
+  "L10",
+  "L11",
+  "L12",
+  "L13",
+  "L14"
+ ]
+}

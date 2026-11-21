@@ -1,0 +1,122 @@
+[
+ {
+  "id": 1,
+  "question": "How many days of annual leave do I get?",
+  "role": "employee",
+  "source": "leave-annual"
+ },
+ {
+  "id": 2,
+  "question": "How many unused leave days can I carry over?",
+  "role": "employee",
+  "source": "leave-annual"
+ },
+ {
+  "id": 3,
+  "question": "Do I need a doctor's note for sick leave?",
+  "role": "employee",
+  "source": "leave-sick"
+ },
+ {
+  "id": 4,
+  "question": "Which day is the mandatory office day?",
+  "role": "employee",
+  "source": "remote-work"
+ },
+ {
+  "id": 5,
+  "question": "What is the nightly hotel limit for business travel?",
+  "role": "employee",
+  "source": "expenses-travel"
+ },
+ {
+  "id": 6,
+  "question": "Can I expense alcohol with a business dinner?",
+  "role": "employee",
+  "source": "expenses-meals"
+ },
+ {
+  "id": 7,
+  "question": "How often must I change my password?",
+  "role": "employee",
+  "source": "it-passwords"
+ },
+ {
+  "id": 8,
+  "question": "How long do I have to report a lost laptop?",
+  "role": "employee",
+  "source": "it-devices"
+ },
+ {
+  "id": 9,
+  "question": "Where do I forward a phishing email?",
+  "role": "employee",
+  "source": "security-incident"
+ },
+ {
+  "id": 10,
+  "question": "Can I email Restricted data?",
+  "role": "employee",
+  "source": "data-classification"
+ },
+ {
+  "id": 11,
+  "question": "How many weeks of parental leave does the primary carer get?",
+  "role": "employee",
+  "source": "parental-leave"
+ },
+ {
+  "id": 12,
+  "question": "How big is my yearly learning budget?",
+  "role": "employee",
+  "source": "learning-budget"
+ },
+ {
+  "id": 13,
+  "question": "What is the salary band for level L3?",
+  "role": "hr",
+  "source": "salary-bands"
+ },
+ {
+  "id": 14,
+  "question": "How long do I have to appeal a warning?",
+  "role": "hr",
+  "source": "disciplinary"
+ },
+ {
+  "id": 15,
+  "question": "How long is the notice period after five years of service?",
+  "role": "hr",
+  "source": "termination"
+ },
+ {
+  "id": 16,
+  "question": "Who must approve a purchase of 5,000 EUR?",
+  "role": "finance",
+  "source": "budget-approval"
+ },
+ {
+  "id": 17,
+  "question": "What is the monthly limit on the corporate card?",
+  "role": "finance",
+  "source": "corporate-card"
+ },
+ {
+  "id": 18,
+  "question": "When do headcount requests for next year have to be submitted?",
+  "role": "manager",
+  "source": "headcount-requests"
+ },
+ {
+  "id": 19,
+  "question": "How often must I hold one-to-ones with my reports?",
+  "role": "manager",
+  "source": "one-to-ones"
+ },
+ {
+  "id": 20,
+  "question": "How much is the on-call allowance per week?",
+  "role": "manager",
+  "source": "on-call"
+ }
+]

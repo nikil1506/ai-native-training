@@ -1,0 +1,8 @@
+03:08 INFO  email-consumer processing batch 8841
+03:10 ERROR email-consumer crashed: poison message id=9f2 (invalid UTF-8)
+03:10 WARN  queue depth rising 1200/min
+03:50 WARN  queue depth 52,000 (alert threshold 50,000)
+03:55 INFO  alert email_backlog PAGED oncall-lee
+04:20 INFO  hotfix: skip undecodable messages (deploy consumer v1.9.1)
+04:30 INFO  consumer healthy
+05:10 INFO  queue drained (0)

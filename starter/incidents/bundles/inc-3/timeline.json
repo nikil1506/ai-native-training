@@ -1,0 +1,18 @@
+[
+ {
+  "t": "03:10",
+  "e": "consumer crashed"
+ },
+ {
+  "t": "03:15",
+  "e": "oncall paged"
+ },
+ {
+  "t": "04:30",
+  "e": "consumer healthy"
+ },
+ {
+  "t": "05:10",
+  "e": "queue drained"
+ }
+]

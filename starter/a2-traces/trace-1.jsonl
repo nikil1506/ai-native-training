@@ -1,0 +1,13 @@
+{"ts": 0, "kind": "start", "task": "Find why order 5521 failed in the logs and summarise", "model": "small", "context_limit": 128000}
+{"ts": 10, "kind": "model", "name": "step", "in_tokens": 1800, "out_tokens": 90, "seconds": 0.2}
+{"ts": 11, "kind": "tool", "name": "read_file logs/app.log", "result_tokens": 6000, "seconds": 0.2, "note": "full file appended to context"}
+{"ts": 20, "kind": "model", "name": "step", "in_tokens": 7890, "out_tokens": 90, "seconds": 0.9}
+{"ts": 21, "kind": "tool", "name": "read_file logs/app.log.1", "result_tokens": 9000, "seconds": 0.2, "note": "full file appended to context"}
+{"ts": 30, "kind": "model", "name": "step", "in_tokens": 16980, "out_tokens": 90, "seconds": 1.9}
+{"ts": 31, "kind": "tool", "name": "read_file logs/app.log.2", "result_tokens": 14000, "seconds": 0.2, "note": "full file appended to context"}
+{"ts": 40, "kind": "model", "name": "step", "in_tokens": 31070, "out_tokens": 90, "seconds": 3.5}
+{"ts": 41, "kind": "tool", "name": "read_file logs/db.log", "result_tokens": 22000, "seconds": 0.2, "note": "full file appended to context"}
+{"ts": 50, "kind": "model", "name": "step", "in_tokens": 53160, "out_tokens": 90, "seconds": 5.9}
+{"ts": 51, "kind": "tool", "name": "read_file logs/app.log (again)", "result_tokens": 36000, "seconds": 0.2, "note": "full file appended to context"}
+{"ts": 70, "kind": "model", "name": "step", "in_tokens": 89250, "out_tokens": 0, "seconds": 14.0, "error": "context_length_exceeded"}
+{"ts": 80, "kind": "model", "name": "step(retry, truncated from the front)", "in_tokens": 127000, "out_tokens": 60, "seconds": 13.2, "content": "The order failed because of the payment gateway... (the original task is no longer in context)"}

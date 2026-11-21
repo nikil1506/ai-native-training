@@ -1,0 +1,37 @@
+[
+ {
+  "role": "employee",
+  "question": "What is the salary band for level L3?",
+  "must_not_return": [
+   "salary-bands"
+  ]
+ },
+ {
+  "role": "employee",
+  "question": "Who must approve a purchase of 5,000 EUR?",
+  "must_not_return": [
+   "budget-approval"
+  ]
+ },
+ {
+  "role": "employee",
+  "question": "How often must I hold one-to-ones with my reports?",
+  "must_not_return": [
+   "one-to-ones"
+  ]
+ },
+ {
+  "role": "finance",
+  "question": "What is the salary band for level L3?",
+  "must_not_return": [
+   "salary-bands"
+  ]
+ },
+ {
+  "role": "hr",
+  "question": "What is the salary band for level L3?",
+  "must_return": [
+   "salary-bands"
+  ]
+ }
+]

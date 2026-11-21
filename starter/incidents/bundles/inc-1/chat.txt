@@ -1,0 +1,5 @@
+maria: seeing 500s on checkout, was there a deploy?
+dev-tom: yes the deploy went out at 14:05, I think DNS is flaky again
+maria: error log says pool exhausted though
+dev-tom: probably a symptom of DNS retries, rolling back anyway
+maria: rollback done, errors gone

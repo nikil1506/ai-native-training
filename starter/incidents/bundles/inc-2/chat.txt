@@ -1,0 +1,5 @@
+raj: search is crawling
+ana: network partition between the app and cache? saw packet loss in my VPN
+raj: no, cache-3 died with OOM
+ana: ok. customers were affected for about 2 hours I'd say
+raj: restarted cache-3 with more memory, looks fine

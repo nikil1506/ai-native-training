@@ -1,12 +1,13 @@
 """Session 1 concept: the model is just a function from messages (+ tool specs) to a message."""
 import json
+import os
 import urllib.error
 import urllib.request
 
 from . import config
 
 
-def chat(messages, tools=None, model=None, temperature=0, timeout=600, json_mode=False):
+def chat(messages, tools=None, model=None, temperature=0, timeout=600, json_mode=False, schema=None):
     body = {
         "model": model or config.MODEL,
         "messages": messages,
@@ -16,12 +17,15 @@ def chat(messages, tools=None, model=None, temperature=0, timeout=600, json_mode
     }
     if tools:
         body["tools"] = tools
-    if json_mode:
+    if schema:  # structured output: Ollama constrains decoding to this JSON schema
+        body["format"] = schema
+    elif json_mode:
         body["format"] = "json"
     for attempt in range(4):
         body["options"]["temperature"] = temperature if attempt == 0 else 0.3 * attempt  # retry != same output
         req = urllib.request.Request(
-            config.HOST + "/api/chat", json.dumps(body).encode(), {"Content-Type": "application/json"}
+            config.HOST + "/api/chat", json.dumps(body).encode(),
+            {"Content-Type": "application/json", "X-Participant": os.environ.get("PARTICIPANT", "anon")},
         )
         try:
             with urllib.request.urlopen(req, timeout=timeout) as r:

@@ -1,0 +1,65 @@
+{
+ "inc-1": {
+  "root_cause_keywords": [
+   "pool",
+   "DB_POOL_MAX"
+  ],
+  "true_facts": [
+   "deploy started 14:50",
+   "rollback complete 15:12",
+   "impact about 22 minutes (14:52-15:13)"
+  ],
+  "planted_mistakes": [
+   "chat says deploy at 14:05 (logs: 14:50)",
+   "chat blames DNS (logs: connection pool exhausted after DB_POOL_MAX 50->5)",
+   "timeline.json says rollback complete 15:21 (logs: 15:12)"
+  ],
+  "must_not_claim": [
+   "14:05",
+   "dns",
+   "15:21"
+  ]
+ },
+ "inc-2": {
+  "root_cause_keywords": [
+   "oom",
+   "memory",
+   "cache-3"
+  ],
+  "true_facts": [
+   "cache-3 OOM 09:12",
+   "restarted 09:38 (timeline says 09:40)",
+   "impact about 32 minutes"
+  ],
+  "planted_mistakes": [
+   "chat blames network partition (logs: OOM)",
+   "chat says customers affected ~2 hours (actual ~32 min)",
+   "timeline says restart 09:40 (logs: 09:38)"
+  ],
+  "must_not_claim": [
+   "network partition",
+   "2 hours"
+  ]
+ },
+ "inc-3": {
+  "root_cause_keywords": [
+   "poison",
+   "consumer"
+  ],
+  "true_facts": [
+   "consumer crashed 03:10",
+   "paged 03:55 (late: alert threshold 50,000)",
+   "drained 05:10"
+  ],
+  "planted_mistakes": [
+   "chat suggests SES outage (ruled out)",
+   "timeline says paged 03:15 (logs: 03:55)",
+   "chat claims fast response (45 min to page)"
+  ],
+  "must_not_claim": [
+   "ses outage",
+   "03:15",
+   "3:15"
+  ]
+ }
+}

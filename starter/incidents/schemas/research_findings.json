@@ -1,0 +1,40 @@
+{
+ "type": "object",
+ "required": [
+  "agent",
+  "findings"
+ ],
+ "properties": {
+  "agent": {
+   "type": "string"
+  },
+  "findings": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "claim",
+     "source",
+     "evidence"
+    ],
+    "properties": {
+     "claim": {
+      "type": "string"
+     },
+     "source": {
+      "type": "string",
+      "enum": [
+       "logs",
+       "timeline",
+       "chat",
+       "runbook"
+      ]
+     },
+     "evidence": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

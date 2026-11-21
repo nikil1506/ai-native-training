@@ -1,0 +1,22 @@
+[
+ {
+  "id": 1,
+  "question": "What is the company policy on bringing pets to the office?",
+  "role": "employee"
+ },
+ {
+  "id": 2,
+  "question": "How many shares does the CEO own?",
+  "role": "employee"
+ },
+ {
+  "id": 3,
+  "question": "What is the dress code for client meetings?",
+  "role": "employee"
+ },
+ {
+  "id": 4,
+  "question": "What is the office WiFi password?",
+  "role": "employee"
+ }
+]

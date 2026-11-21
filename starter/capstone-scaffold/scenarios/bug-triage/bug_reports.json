@@ -1,0 +1,6 @@
+[
+ {"id":"B1","title":"Search returns 11 results when I ask for 10","body":"Called search(items, 'lamp', limit=10) and got 11 items back."},
+ {"id":"B2","title":"Invoice totals are off by a cent sometimes","body":"Subtotal 19.99 with 8.25% tax shows 21.64 but my calculator says 21.6399, we expected consistent rounding on the final amount."},
+ {"id":"B3","title":"Accounts never lock","body":"I tried 50 wrong passwords and I could still log in afterwards. There should be a lockout."},
+ {"id":"B4","title":"Discount code with lower-case letters is ignored","body":"'save10' gives no discount but 'SAVE10' does."}
+]

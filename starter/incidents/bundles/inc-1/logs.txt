@@ -1,0 +1,9 @@
+14:48 INFO  deploy v2.31 queued by ci-bot
+14:50 INFO  deploy v2.31 started (checkout-service, 6 pods)
+14:51 INFO  config applied: DB_POOL_MAX=5 (was 50)
+14:52 ERROR checkout-service: connection pool exhausted (waiting=212)
+14:53 ERROR checkout-service: POST /pay 500 (pool timeout)
+14:57 WARN  alert checkout_error_rate>5% FIRING
+15:05 INFO  rollback to v2.30 initiated by oncall-maria
+15:12 INFO  rollback complete; DB_POOL_MAX=50
+15:13 INFO  checkout error rate back to 0.2%

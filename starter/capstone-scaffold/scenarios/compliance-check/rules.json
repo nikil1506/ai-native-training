@@ -1,0 +1,8 @@
+[
+ {"id":"R1","rule":"Personal data must not be stored unencrypted or in broadly shared files."},
+ {"id":"R2","rule":"Customer data must not be copied to personal devices."},
+ {"id":"R3","rule":"Deletion requests must be answered within 30 days, stated explicitly."},
+ {"id":"R4","rule":"Retention periods must be stated and justified."},
+ {"id":"R5","rule":"All vendors processing personal data must have a signed data processing agreement."},
+ {"id":"R6","rule":"Backups must be encrypted."}
+]

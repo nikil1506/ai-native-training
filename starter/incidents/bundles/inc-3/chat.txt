@@ -1,0 +1,5 @@
+lee: emails are late, is SES down?
+lee: AWS status page says SES is fine
+sam: consumer crashed at 3:10, bad message
+lee: so SES outage is ruled out, I'll hotfix the consumer
+sam: paged at 3:15 so we responded fast

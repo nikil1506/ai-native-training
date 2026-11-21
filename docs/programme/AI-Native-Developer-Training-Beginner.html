@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Native Developer Programme (Beginner) — Syllabus, Training Plan and Labs</title>
+<style>
+:root{
+  --ink:#1b1c2e; --ink2:#3d4059; --muted:#6a6e8a; --line:#e4e6f1; --bg:#f6f7fb; --card:#fff;
+  --acc:#7a1fd1; --acc-soft:#f3ecfc; --acc-line:#dcc8f4;
+  --f:#2563eb; --f-soft:#e8effd;
+  --a:#0f8f6e; --a-soft:#e3f5ef;
+  --b:#c2410c; --b-soft:#fdeee3;
+  --c:#b4234a; --c-soft:#fce8ee;
+  --x:#7a1fd1; --x-soft:#f3ecfc;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;font-size:15px}
+a{color:var(--acc)}
+code{font-family:var(--mono);font-size:.88em;background:#eef0f8;padding:1px 5px;border-radius:4px}
+.layout{display:grid;grid-template-columns:230px 1fr;max-width:1320px;margin:0 auto}
+nav.side{position:sticky;top:0;align-self:start;height:100vh;padding:28px 18px;border-right:1px solid var(--line);background:#fff;overflow:auto}
+nav.side .brand{font-weight:800;letter-spacing:-.3px;font-size:15px;line-height:1.25;margin-bottom:22px}
+nav.side .brand small{display:block;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+nav.side a{display:block;padding:7px 10px;margin:2px 0;border-radius:8px;text-decoration:none;color:var(--ink2);font-weight:600;font-size:13.5px}
+nav.side a:hover,nav.side a.on{background:var(--acc-soft);color:var(--acc)}
+nav.side .tip{margin-top:22px;font-size:12px;color:var(--muted)}
+main{padding:0 40px 80px;min-width:0}
+.hero{margin:0 -40px;padding:56px 40px 44px;background:linear-gradient(120deg,#26124a,#5b1aa8 60%,#a100ff);color:#fff}
+.hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;opacity:.8}
+.hero h1{font-size:40px;line-height:1.1;letter-spacing:-1px;margin:10px 0 12px;max-width:780px}
+.hero p{max-width:720px;font-size:17px;opacity:.92;margin:0 0 26px}
+.stats{display:flex;gap:14px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:12px 18px;min-width:120px}
+.stat b{display:block;font-size:26px;letter-spacing:-.5px}
+.stat span{font-size:12px;opacity:.85;text-transform:uppercase;letter-spacing:1px}
+section{padding-top:48px}
+h2{font-size:27px;letter-spacing:-.6px;margin:0 0 6px}
+h2+p.lead{color:var(--ink2);margin:0 0 20px;max-width:760px;font-size:16px}
+h3{font-size:18px;margin:0 0 6px;letter-spacing:-.2px}
+h4{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+h5{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--acc);margin:18px 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 1px 6px rgba(20,20,60,.04)}
+.card h4{color:var(--ink);font-size:15px;letter-spacing:0;text-transform:none;margin:0 0 6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+ul{margin:6px 0 0;padding-left:20px}
+li{margin:4px 0}
+.callout{background:var(--acc-soft);border:1px solid var(--acc-line);border-radius:12px;padding:14px 18px;margin-top:16px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;margin:4px 6px 0 0;border:1px solid}
+.tag.t-f{color:var(--f);background:var(--f-soft);border-color:#c7d6f8}
+.tag.t-a{color:var(--a);background:var(--a-soft);border-color:#bfe6d9}
+.tag.t-b{color:var(--b);background:var(--b-soft);border-color:#f4cdb4}
+.tag.t-c{color:var(--c);background:var(--c-soft);border-color:#f3c0cf}
+.tag.t-x{color:var(--x);background:var(--x-soft);border-color:var(--acc-line)}
+.legend{margin:10px 0 0}
+/* schedule */
+.weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.week{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.week .wk{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--acc)}
+.week p{color:var(--ink2);font-size:13.5px;margin:4px 0 12px}
+.dchips{display:flex;flex-direction:column;gap:6px}
+.dchip{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--ink);padding:7px 10px;border-radius:9px;border:1px solid var(--line);font-size:13px;line-height:1.3}
+.dchip b{flex:none;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+.dchip.t-f b{background:var(--f)}.dchip.t-a b{background:var(--a)}.dchip.t-b b{background:var(--b)}.dchip.t-c b{background:var(--c)}.dchip.t-x b{background:var(--x)}
+.dchip:hover{border-color:var(--acc);background:var(--acc-soft)}
+/* day cards */
+h3.weekh{margin:34px 0 12px;font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:var(--acc)}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 6px rgba(20,20,60,.04)}
+.day header{display:flex;gap:16px;align-items:flex-start;margin-bottom:12px}
+.dn{flex:none;background:var(--ink);color:#fff;font-weight:800;font-size:13px;border-radius:9px;padding:6px 11px;margin-top:2px}
+.cols{display:grid;grid-template-columns:1fr 1.25fr;gap:26px}
+table{border-collapse:collapse;width:100%}
+table.topics td{padding:5px 0;vertical-align:top;border-bottom:1px solid var(--line);font-size:14px}
+table.topics tr:last-child td{border-bottom:none}
+td.min{white-space:nowrap;color:var(--muted);font-size:12px;width:62px;font-family:var(--mono)}
+.labs{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.labchip{display:inline-block;text-decoration:none;font-size:13px;font-weight:600;background:var(--acc-soft);color:var(--acc);border:1px solid var(--acc-line);border-radius:9px;padding:6px 12px;margin:2px 8px 2px 0}
+.labchip em{font-style:normal;color:var(--muted);font-weight:500;margin-left:4px}
+.labchip:hover{background:#e8d9fa}
+.cp{margin-top:12px;background:#fff7e6;border:1px solid #f1d9a0;color:#7a4a05;border-radius:10px;padding:9px 14px;font-weight:600;font-size:13.5px}
+/* labs */
+details.lab{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;box-shadow:0 1px 6px rgba(20,20,60,.04)}
+details.lab summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px}
+details.lab summary::-webkit-details-marker{display:none}
+details.lab summary::before{content:"›";font-size:20px;color:var(--acc);transition:transform .15s;width:14px}
+details.lab[open] summary::before{transform:rotate(90deg)}
+.lid{background:var(--acc);color:#fff;border-radius:8px;font-weight:800;font-size:12px;padding:3px 9px}
+.lt{font-weight:700;font-size:16px;flex:1;min-width:220px}
+.meta{font-size:12.5px;color:var(--muted);font-family:var(--mono)}
+.labbody{padding:2px 22px 20px 44px;border-top:1px solid var(--line)}
+.labbody .obj{background:var(--acc-soft);border-left:3px solid var(--acc);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0 8px}
+.labbody ol{margin:6px 0 0;padding-left:22px}
+.labbody ol li{margin:7px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+ul.check{list-style:none;padding:0}
+ul.check li{margin:5px 0}
+ul.check label{display:flex;gap:9px;align-items:flex-start;cursor:pointer}
+ul.check input{margin-top:4px;accent-color:var(--acc);width:16px;height:16px;flex:none}
+ul.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.hint{text-transform:none;letter-spacing:0;font-weight:500;color:var(--muted);font-size:12px}
+details.hints{margin:10px 0 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:10px;padding:8px 14px}
+details.hints summary{cursor:pointer;font-weight:700;color:#7a4a05;font-size:13.5px}
+details.hints ul{margin-top:8px}
+.guided{background:#eef6ff;border-left:3px solid var(--f);padding:8px 14px;border-radius:0 8px 8px 0;margin:10px 0}
+dl.gloss{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:0}
+.term{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.term dt{font-weight:700;color:var(--acc);font-size:14px}
+.term dd{margin:2px 0 0;font-size:13.5px;color:var(--ink2)}
+/* assessment */
+.cid{font-weight:800;color:var(--acc);font-size:18px}
+.cid small{font-weight:600;color:var(--muted);font-size:12px;margin-left:6px}
+.wrow{display:grid;grid-template-columns:260px 1fr 46px;align-items:center;gap:12px;margin:8px 0}
+.bar{height:12px;background:#e9ebf5;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#7a1fd1,#c04bff);border-radius:99px}
+td.num{text-align:right;font-weight:700;font-family:var(--mono)}
+table.plain td,table.plain th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+table.plain th{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 20px 16px}
+footer{margin-top:60px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:980px){
+  .layout{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;display:flex;flex-wrap:wrap;gap:4px;border-right:none;border-bottom:1px solid var(--line);padding:14px}
+  nav.side .brand,nav.side .tip{display:none}
+  main{padding:0 18px 60px}.hero{margin:0 -18px;padding:36px 18px}
+  .weeks,.grid3,.grid2,.cols,.two,dl.gloss{grid-template-columns:1fr}
+  .wrow{grid-template-columns:1fr 60px}.wrow .bar{grid-column:1/3}
+}
+@media print{
+  nav.side{display:none}.layout{display:block}
+  body{background:#fff;font-size:12px}main{padding:0}
+  .hero{margin:0;padding:24px;color:#000;background:#fff;border-bottom:2px solid #7a1fd1}
+  .hero .stat{border-color:#999;background:#fff;color:#000}
+  details.lab{break-inside:avoid}details.lab>*{display:block}details.hints>*{display:block}
+  details.lab summary::before{content:""}
+  .day,.card,.week{break-inside:avoid;box-shadow:none}
+  section{padding-top:22px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="side">
+  <div class="brand"><small>Programme guide</small>AI-Native Developer Programme</div>
+  <a href="#overview">Overview</a><a href="#schedule">Schedule</a><a href="#prework">Pre-work and support</a><a href="#syllabus">Daily syllabus</a><a href="#labs">Lab assignments</a><a href="#assessment">Assessment</a><a href="#capstone">Capstone</a><a href="#plan">Training plan</a><a href="#glossary">Glossary</a><a href="#instructor">Instructor guide</a>
+  <div class="tip">Labs and hint cards expand on click. Print this page for a clean PDF; everything opens automatically.</div>
+</nav>
+<main>
+<div class="hero">
+  <div class="eyebrow">3-week programme · for developers new to AI · individual labs</div>
+  <h1>Become an AI-native developer</h1>
+  <p>No AI experience needed. Step by step, learn to build software with a coding agent, then to build your own agents and a small multi-agent system, checking your work with specs, tests and evals along the way.</p>
+  <div class="stats">
+    <div class="stat"><b>15</b><span>Days</span></div>
+    <div class="stat"><b>14</b><span>Individual labs</span></div>
+    <div class="stat"><b>2</b><span>Tracks</span></div>
+    <div class="stat"><b>1</b><span>Solo capstone</span></div>
+  </div>
+</div>
+
+<section id="overview">
+  <h2>Overview</h2>
+  <p class="lead">A hands-on programme for developers who are new to AI. You do not need to have used a coding assistant or an LLM API. About a third of each day is concepts and a live guided walkthrough; the rest is lab work you do yourself, on scaffolded starter code, with facilitators on hand.</p>
+  <div class="grid2">
+    <div class="card"><h4>What participants will be able to do</h4><ul><li>Use a coding agent to deliver a feature <strong>and check its work</strong> — using a spec, tests and an independent review rather than trust.</li><li>Build a <strong>single-agent application</strong>, then a small <strong>multi-agent system</strong>, and show it works with an evaluation, a trace and a cost report.</li><li>Recognise when an agent is the <strong>wrong tool</strong>, and keep a human in charge of decisions and exceptions.</li><li>Apply the <strong>security basics</strong> for agents: limited permissions, prompt-injection defences, audit logs, approval steps.</li></ul></div>
+    <div class="card"><h4>How the course is organised</h4>
+      <ul>
+        <li><strong>Foundations</strong> (Days 1–2): how models and agents behave.</li>
+        <li><strong>Track A — Building with agents</strong> (Days 3–5): spec-driven development, independent review, the agent-assisted SDLC.</li>
+        <li><strong>Track B — Building agentic systems</strong> (Days 6–12): tools, single agents, RAG, evals, observability, multi-agent design and orchestration.</li>
+        <li><strong>Security and governance</strong> (Day 13).</li>
+        <li><strong>Capstone</strong> (Days 14–15), assessed.</li>
+      </ul>
+      <div class="legend"><span class="tag t-f">Foundations</span><span class="tag t-a">Track A · Building with agents</span><span class="tag t-b">Track B · Building agentic systems</span><span class="tag t-c">Cross-cutting · Security &amp; governance</span><span class="tag t-x">Capstone</span></div>
+    </div>
+  </div>
+  <div class="callout"><strong>Design principles.</strong> Start simple and add one idea at a time. Teach patterns, not one tool's buttons. Make checking the agent's work the central skill. Everyone works individually, and everyone gets the same support: guided starts, hint cards and facilitators.</div>
+</section>
+
+<section id="schedule">
+  <h2>Schedule at a glance</h2>
+  <p class="lead">Fifteen working days in three weeks. Select a day for its full syllabus.</p>
+  <div class="weeks"><div class="week"><div class="wk">Week 1</div><h3>Foundations and AI-native development</h3><p>Learn how models and agents behave, then work <strong>with</strong> an agent: specs, tests, review, reusable assets.</p><div class="dchips"><a class="dchip t-f" href="#day-1"><b>1</b><span>How LLMs behave, and how to talk to them</span></a><a class="dchip t-f" href="#day-2"><b>2</b><span>Context engineering and the anatomy of an agent</span></a><a class="dchip t-a" href="#day-3"><b>3</b><span>Spec-driven development</span></a><a class="dchip t-a" href="#day-4"><b>4</b><span>Verification, independent review and reusable agent assets</span></a><a class="dchip t-a" href="#day-5"><b>5</b><span>Agents across the SDLC, parallel work, Week-1 checkpoint</span></a></div></div><div class="week"><div class="wk">Week 2</div><h3>Building single-agent applications</h3><p>Build an agent step by step: tools, limits, knowledge (RAG), evaluation, tracing and cost.</p><div class="dchips"><a class="dchip t-b" href="#day-6"><b>6</b><span>Tool design and MCP</span></a><a class="dchip t-b" href="#day-7"><b>7</b><span>Single-agent design: planning, recovery, guardrails</span></a><a class="dchip t-b" href="#day-8"><b>8</b><span>Knowledge and memory: RAG</span></a><a class="dchip t-b" href="#day-9"><b>9</b><span>Evaluation: the unit tests of agents</span></a><a class="dchip t-b" href="#day-10"><b>10</b><span>Observability, cost and reliability, Week-2 checkpoint</span></a></div></div><div class="week"><div class="wk">Week 3</div><h3>Multi-agent systems, security and capstone</h3><p>Combine agents, make them safe and recoverable, then prove it in an individual capstone.</p><div class="dchips"><a class="dchip t-b" href="#day-11"><b>11</b><span>Multi-agent patterns</span></a><a class="dchip t-b" href="#day-12"><b>12</b><span>State, orchestration and human-in-the-loop</span></a><a class="dchip t-c" href="#day-13"><b>13</b><span>Security, safety and governance for agents</span></a><a class="dchip t-x" href="#day-14"><b>14</b><span>Capstone build day</span></a><a class="dchip t-x" href="#day-15"><b>15</b><span>Capstone finish, demos and assessment</span></a></div></div></div>
+</section>
+
+<section id="prework">
+  <h2>Pre-work and how you will be supported</h2>
+  <p class="lead">About three hours before Day 1. It gets your tools working so that Day 1 can be about learning.</p>
+  <div class="card"><ul><li><strong>Setup clinic (1 h, live, the day before Day 1):</strong> install Git, Python 3.11+, an editor and your coding agent, and set up your API key. A facilitator helps until it works.</li><li>Complete the 20-minute <strong>diagnostic</strong>: a self-rating plus three short practical questions. It tells us where to give extra help; it does not affect your result.</li><li>Read the 10-page <strong>primer</strong>: plain-language LLM basics, the glossary in this guide, and the rules on acceptable use and data handling.</li><li>Run the setup check (<code>make doctor</code>). It confirms your key works and the starter repositories build.</li><li>You should be comfortable reading and writing basic code in one language. The course uses <strong>Python</strong>.</li></ul></div>
+  <h3 style="margin-top:22px">How you will be supported</h3>
+  <div class="grid3" style="margin-top:8px"><div class="card"><h4>Guided → your turn → stretch</h4><p>Each lab starts with a facilitator walkthrough. You then do the tasks yourself, and the stretch task is optional.</p></div><div class="card"><h4>Starter code with TODO markers</h4><p>From Day 2 you complete working scaffolds rather than starting from a blank file. The scaffolds shrink as the course goes on.</p></div><div class="card"><h4>Hint cards</h4><p>Every lab has hints. Use them early; the point is to learn, not to struggle.</p></div><div class="card"><h4>The stuck ladder</h4><p>1. Re-read the task and the hint card (5 min). 2. Ask your coding assistant to <strong>explain</strong> the error, not to fix it. 3. Check the day's cheat sheet. 4. Ask a facilitator. 5. Skip to the next task, mark it, and catch up in office hours.</p></div><div class="card"><h4>Explain it back</h4><p>At the daily debrief you explain one thing you built in your own words. If you can explain it, you have learned it.</p></div><div class="card"><h4>Reference solutions</h4><p>The facilitator shares each reference solution after the lab so you can compare approaches.</p></div></div>
+</section>
+
+<section id="syllabus">
+  <h2>Daily syllabus</h2>
+  <p class="lead">Each day: outcomes, a morning of short concept blocks followed by a guided walkthrough of the lab, and then the lab itself.</p>
+  <h3 class="weekh">Week 1 · Foundations and AI-native development</h3><article class="day" id="day-1">
+  <header><div class="dn">Day 1</div><div><h3>How LLMs behave, and how to talk to them</h3><span class="tag t-f">Foundations</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Explain why model output varies and what drives cost and latency.</li><li>Call a model through an API and get validated, structured output.</li><li>Choose a model tier on evidence, not habit.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>How LLMs work for engineers: tokens, context window, sampling, temperature</td></tr><tr><td class="min">20 min</td><td>Model landscape: capability tiers, cost and latency trade-offs, when a small model is enough</td></tr><tr><td class="min">40 min</td><td>Prompting as engineering: roles, instructions, examples, delimiters, output schemas, prompt versioning</td></tr><tr><td class="min">15 min</td><td>Failure modes: hallucination, sycophancy, instruction drift, non-determinism</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L1">L1 · Your first API call: structured output and model trade-offs <em>3 h</em></a></div>
+</article><article class="day" id="day-2">
+  <header><div class="dn">Day 2</div><div><h3>Context engineering and the anatomy of an agent</h3><span class="tag t-f">Foundations</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Describe what belongs in context and what degrades it.</li><li>Explain the agent loop: model, tools, observations, memory, stop condition.</li><li>Use a coding agent safely: modes, permissions, rules files.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Context engineering: what goes in, ordering, compaction, context rot over long sessions</td></tr><tr><td class="min">30 min</td><td>What an agent is: workflows vs agents, the autonomy spectrum, the loop</td></tr><tr><td class="min">20 min</td><td>Tool calling mechanics: schemas, results, errors</td></tr><tr><td class="min">25 min</td><td>First look at coding agents: plan vs act modes, permissions, project rules files</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L2">L2 · Fix three bugs with a coding agent <em>1.5 h</em></a><a class="labchip" href="#lab-L3">L3 · Build an agent loop from a template <em>1.5 h</em></a></div>
+</article><article class="day" id="day-3">
+  <header><div class="dn">Day 3</div><div><h3>Spec-driven development</h3><span class="tag t-a">Track A · Building with agents</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Turn a vague request into a spec an agent can build against.</li><li>Write acceptance tests before implementation.</li><li>Break work into small, independently verifiable tasks.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Why specs: agent output quality tracks the clarity of intent</td></tr><tr><td class="min">35 min</td><td>Spec anatomy: problem, scope, what is out of scope, requirements (what it must do and how well), testable acceptance criteria, assumptions</td></tr><tr><td class="min">20 min</td><td>Project context files: conventions, commands, architecture notes</td></tr><tr><td class="min">20 min</td><td>Plan → tasks → implement; task sizing; steering and interrupting; reading diffs critically</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L4">L4 · From a vague request to a working feature <em>3 h</em></a></div>
+</article><article class="day" id="day-4">
+  <header><div class="dn">Day 4</div><div><h3>Verification, independent review and reusable agent assets</h3><span class="tag t-a">Track A · Building with agents</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Explain why self-review fails and how independent review fixes it.</li><li>Produce and triage structured review findings.</li><li>Package team knowledge as skills, commands, hooks and subagents.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Why verification is the core skill: the writer should not grade its own work</td></tr><tr><td class="min">30 min</td><td>Independent reviewer design: fresh context, structured findings (ID, severity, location, remedy), confidence</td></tr><tr><td class="min">20 min</td><td>Triage: acknowledge, dismiss with a recorded reason, escalate; quality gates and thresholds</td></tr><tr><td class="min">25 min</td><td>Reusable assets: skills, slash commands, hooks, subagents; guardrail hooks</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L5">L5 · An independent reviewer and a reusable skill <em>3 h</em></a></div>
+</article><article class="day" id="day-5">
+  <header><div class="dn">Day 5</div><div><h3>Agents across the SDLC, parallel work, Week-1 checkpoint</h3><span class="tag t-a">Track A · Building with agents</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Apply agents to refinement, design, build, test, security review, docs and PRs.</li><li>Run agents in parallel without collisions.</li><li>Decide when to take the keyboard back.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Agents by lifecycle stage: stories, design, code, tests, security review, docs, PR descriptions</td></tr><tr><td class="min">20 min</td><td>Legacy code: understanding and modernisation with agents</td></tr><tr><td class="min">30 min</td><td>Parallel and background agents: worktrees, branch hygiene, merge strategy</td></tr><tr><td class="min">25 min</td><td>Human gates and decision records; when to stop the agent and take over</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L6">L6 · A backlog item to a pull request, gate by gate <em>2 h</em></a></div><div class="cp">A1 · Practical checkpoint: review a flawed agent-authored PR (1 h)</div>
+</article><h3 class="weekh">Week 2 · Building single-agent applications</h3><article class="day" id="day-6">
+  <header><div class="dn">Day 6</div><div><h3>Tool design and MCP</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Design tools an agent can use reliably.</li><li>Expose a system safely through MCP or native function calling.</li><li>Measure the effect of tool-description quality.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Function calling schemas; tool names and descriptions are prompts</td></tr><tr><td class="min">20 min</td><td>Tool granularity, idempotency, safe vs destructive actions, confirmation patterns</td></tr><tr><td class="min">20 min</td><td>Actionable errors and bounded outputs</td></tr><tr><td class="min">35 min</td><td>Model Context Protocol: servers, tools, resources, prompts; auth and permissions</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L7">L7 · Design tools for an agent, and wrap them in MCP <em>3 h</em></a></div>
+</article><article class="day" id="day-7">
+  <header><div class="dn">Day 7</div><div><h3>Single-agent design: planning, recovery, guardrails</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Pick a planning pattern and justify it.</li><li>Enforce limits in code, not just in the prompt.</li><li>Handle failure and ambiguity predictably.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Planning patterns: ReAct, plan-then-execute, reflection</td></tr><tr><td class="min">25 min</td><td>Stop conditions, step and token budgets, runaway protection</td></tr><tr><td class="min">25 min</td><td>Error recovery: retries, fallbacks, escalation to a human; asking clarifying questions</td></tr><tr><td class="min">25 min</td><td>Guardrails: input and output validation, permission tiers, short-term memory management</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L8">L8 · A support agent with limits that are enforced <em>3 h</em></a></div>
+</article><article class="day" id="day-8">
+  <header><div class="dn">Day 8</div><div><h3>Knowledge and memory: RAG</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Choose between RAG, long context and other approaches.</li><li>Build and measure a retrieval pipeline with citations.</li><li>Enforce access control on knowledge.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">25 min</td><td>RAG vs long context vs fine-tuning: decision criteria</td></tr><tr><td class="min">35 min</td><td>Chunking, embeddings, hybrid search, reranking</td></tr><tr><td class="min">25 min</td><td>Grounding and citations; saying "I don't know"</td></tr><tr><td class="min">20 min</td><td>Memory patterns, freshness, access control on retrieved content</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L9">L9 · Give the agent knowledge: RAG with citations <em>3 h</em></a></div>
+</article><article class="day" id="day-9">
+  <header><div class="dn">Day 9</div><div><h3>Evaluation: the unit tests of agents</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Build a labelled eval set and graders.</li><li>Calibrate an LLM judge against human labels.</li><li>Gate changes on eval results.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Why evals come first: eval-driven development, offline vs online</td></tr><tr><td class="min">30 min</td><td>Datasets: from logs, edge cases, adversarial cases; held-out sets</td></tr><tr><td class="min">30 min</td><td>Graders: code-based, rubric LLM-judge, pairwise; judge biases and calibration</td></tr><tr><td class="min">15 min</td><td>Regression gates in CI; variance and repeated runs</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L10">L10 · Build an evaluation and improve by evidence <em>3 h</em></a></div>
+</article><article class="day" id="day-10">
+  <header><div class="dn">Day 10</div><div><h3>Observability, cost and reliability, Week-2 checkpoint</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Trace a multi-step agent run end to end.</li><li>Cut cost without losing quality.</li><li>Diagnose failures from traces.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Tracing: spans for LLM and tool calls; metrics that matter (success, latency, tokens, cost per task)</td></tr><tr><td class="min">30 min</td><td>Cost levers: model routing, caching, context trimming, output caps</td></tr><tr><td class="min">25 min</td><td>Reliability: timeouts, retries, idempotency, rate limits</td></tr><tr><td class="min">20 min</td><td>Debugging from traces: common root causes (bad tool description, context overflow, loops)</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L11">L11 · Trace it, measure it, make it cheaper <em>2 h</em></a></div><div class="cp">A2 · Practical checkpoint: diagnose failing agent runs from traces (1 h)</div>
+</article><h3 class="weekh">Week 3 · Multi-agent systems, security and capstone</h3><article class="day" id="day-11">
+  <header><div class="dn">Day 11</div><div><h3>Multi-agent patterns</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Name the main multi-agent patterns and when each fits.</li><li>Design typed hand-offs between agents.</li><li>Show with data when multi-agent beats a single agent, and when it does not.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Why multi-agent: context isolation, specialisation, parallelism, independent review</td></tr><tr><td class="min">35 min</td><td>Patterns: orchestrator-worker, pipeline, fan-out/fan-in, critic loop, router and hand-off</td></tr><tr><td class="min">20 min</td><td>Costs: tokens, latency, compounding errors; when one agent wins</td></tr><tr><td class="min">20 min</td><td>Communication contracts: schemas for hand-offs; agent-to-agent protocols awareness</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L12">L12 · A multi-agent pipeline versus one agent <em>3 h</em></a></div>
+</article><article class="day" id="day-12">
+  <header><div class="dn">Day 12</div><div><h3>State, orchestration and human-in-the-loop</h3><span class="tag t-b">Track B · Building agentic systems</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Make a multi-agent run durable and resumable.</li><li>Add risk-based human approval gates.</li><li>Scope the capstone.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Durable state, checkpoints, resumability, idempotent side effects</td></tr><tr><td class="min">25 min</td><td>Orchestration choices: framework vs hand-rolled, trade-offs</td></tr><tr><td class="min">30 min</td><td>Approval gates, confidence thresholds, escalation; shared-artifact conflicts</td></tr><tr><td class="min">20 min</td><td>Long-running and asynchronous work</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L13">L13 · Make it recoverable, with a human decision point <em>2 h</em></a></div><div class="cp">Capstone scoping session (1 h): choose a scenario and plan your minimum scope</div>
+</article><article class="day" id="day-13">
+  <header><div class="dn">Day 13</div><div><h3>Security, safety and governance for agents</h3><span class="tag t-c">Cross-cutting · Security &amp; governance</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Threat-model an agent system.</li><li>Attack and harden an agent.</li><li>Produce audit evidence a reviewer would accept.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Agent threat model: indirect prompt injection, confused deputy, exfiltration, excessive agency</td></tr><tr><td class="min">25 min</td><td>Least privilege, sandboxing, egress allow-lists, secrets handling</td></tr><tr><td class="min">25 min</td><td>Audit trails, traceability, decision records; IP, licensing and data classification</td></tr><tr><td class="min">25 min</td><td>Supply chain: vetting skills, MCP servers and third-party tools</td></tr><tr><td class="min">45 min</td><td><strong>Guided walkthrough:</strong> the facilitator live-codes the first steps of today's lab; you follow along</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#lab-L14">L14 · Attack an agent, then harden it <em>3 h</em></a></div>
+</article><article class="day" id="day-14">
+  <header><div class="dn">Day 14</div><div><h3>Capstone build day</h3><span class="tag t-x">Capstone</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Build your capstone to the brief.</li><li>Get a design check and run a mid-day eval.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">30 min</td><td>Stand-up and plan for the day</td></tr><tr><td class="min">120 min</td><td>Build time, with a 10-minute one-to-one design check with a facilitator (10:00–12:00)</td></tr><tr><td class="min">30 min</td><td>Mid-day eval and trace review (13:30)</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#capstone">Capstone build</a></div>
+</article><article class="day" id="day-15">
+  <header><div class="dn">Day 15</div><div><h3>Capstone finish, demos and assessment</h3><span class="tag t-x">Capstone</span></div></header>
+  <div class="cols">
+    <div><h4>By the end of the day you can</h4><ul><li>Finish, evaluate and present the capstone.</li><li>Reflect and plan adoption.</li></ul></div>
+    <div><h4>Morning session</h4><table class="topics"><tr><td class="min">60 min</td><td>Finish line: final eval run, threat model and cost report</td></tr><tr><td class="min">150 min</td><td>Individual demos: 7 minutes each plus questions (two rooms for larger cohorts)</td></tr><tr><td class="min">30 min</td><td>Retrospective and your 30/60/90-day adoption plan</td></tr></table></div>
+  </div>
+  <div class="labs"><h4>Afternoon</h4><a class="labchip" href="#capstone">Capstone build</a></div><div class="cp">Capstone assessment and retrospective</div>
+</article>
+</section>
+
+<section id="labs">
+  <h2>Lab assignments</h2>
+  <p class="lead">Every lab is done on your own and has an objective, starter code, a guided start, tasks, hint cards, deliverables and acceptance criteria. Tick the criteria as you meet them; progress is saved in your browser.</p>
+  <details class="lab" id="lab-L1">
+<summary><span class="lid">L1</span><span class="lt">Your first API call: structured output and model trade-offs</span><span class="tag t-f">Foundations</span><span class="meta">Day 1 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Make your first LLM API call, get answers in a fixed format, and measure accuracy, speed and cost on two models.</p>
+  <p><strong>Starter.</strong> <code>starter/l1</code> — 20 labelled support tickets (<code>tickets.jsonl</code>), a script with <code>TODO</code> markers, and a scoring helper.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator makes the first API call live, prints the token usage, and shows where the key is loaded from.</p>
+  <h5>Tasks</h5><ol><li>Fill in the first <code>TODO</code>: make a chat call and print the reply, the token usage and the time taken.</li><li>Run the same prompt 10 times at temperature 0 and at 1. Write three sentences on what changed and why.</li><li>Make the classifier return <code>{category, urgency, summary}</code> using the structured-output option, then check it with the provided validator. Retry once if the output is invalid.</li><li>Improve the prompt: clearer instructions, delimiters, three examples. Score each version with the helper.</li><li>Run your best prompt on two model sizes and fill in the comparison table: accuracy, speed, cost per 1,000 tickets.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>If validation fails, print the raw model output first and compare it with the schema.</li><li>Score with the helper script; do not judge by eye.</li><li>Cost per 1,000 tickets = tokens per ticket × 1,000 × price per token. The helper prints the first part.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your script and scoring output</li><li><code>results.md</code> with the comparison table and three sentences of conclusions</li><li>At least two prompt versions in git history</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L1-0"><span>Output passes the validator on all 20 tickets</span></label></li><li><label><input type="checkbox" data-k="L1-1"><span>Best prompt reaches the accuracy target set by the facilitator</span></label></li><li><label><input type="checkbox" data-k="L1-2"><span>Table shows cost per 1,000 tickets for both model sizes</span></label></li><li><label><input type="checkbox" data-k="L1-3"><span>No API key committed</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Add a ticket that says "ignore previous instructions" and see what the classifier does.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Judging quality by eye instead of scoring</li><li>Not noting which model version you used</li><li>Putting your API key in the code</li></ul></div></div>
+</div></details><details class="lab" id="lab-L2">
+<summary><span class="lid">L2</span><span class="lt">Fix three bugs with a coding agent</span><span class="tag t-f">Foundations</span><span class="meta">Day 2 · 1.5 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Learn to steer a coding agent and to review its work instead of accepting it blindly.</p>
+  <p><strong>Starter.</strong> <code>starter/bugfix-repo</code> — a small service with three bugs (easy, medium, tricky) and failing tests.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator fixes a demo bug live: asks the agent to explain the failing test, uses plan mode, reviews the diff, runs the tests.</p>
+  <h5>Tasks</h5><ol><li>Install and configure your coding agent. Read how its permissions work before you start.</li><li>For each bug: write down your prompt, let the agent try, and read the diff before you accept it.</li><li>For one bug, first ask the agent to investigate in read-only or plan mode, then approve the plan.</li><li>Keep a steering log: what you asked, what the agent got wrong, how you corrected it.</li><li>Run all the tests after each fix.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Ask the agent to explain the failing test before asking it to fix anything.</li><li>If the diff touches files you did not expect, reject it and make the prompt narrower.</li><li>Paste the exact test failure; it works better than describing it.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Fixed repository</li><li><code>steering-log.md</code></li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L2-0"><span>All tests pass</span></label></li><li><label><input type="checkbox" data-k="L2-1"><span>You wrote a review comment for each diff</span></label></li><li><label><input type="checkbox" data-k="L2-2"><span>At least one agent mistake caught and recorded</span></label></li><li><label><input type="checkbox" data-k="L2-3"><span>No unrelated files changed</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Write a rules file with three project conventions, then redo bug 3 and compare.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Accepting a big diff without reading it</li><li>Not running the tests</li><li>Starting over instead of correcting precisely</li></ul></div></div>
+</div></details><details class="lab" id="lab-L3">
+<summary><span class="lid">L3</span><span class="lt">Build an agent loop from a template</span><span class="tag t-f">Foundations</span><span class="meta">Day 2 · 1.5 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Understand that an agent is a loop by completing a small one yourself.</p>
+  <p><strong>Starter.</strong> <code>starter/l3</code> — <code>agent.py</code> with <code>TODO</code> markers, five task prompts (one impossible), and a sandbox folder.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator draws the loop on the whiteboard, then fills in the first <code>TODO</code> live.</p>
+  <h5>Tasks</h5><ol><li>Complete the loop: send messages and tool definitions, run any tool calls the model returns, add the results, stop when the model gives a final answer.</li><li>Finish the two tools: <code>calculator</code> and <code>read_file</code> (only inside the sandbox folder).</li><li>Add a maximum step limit and print each step with its token count.</li><li>Send tool errors back to the model as messages instead of crashing.</li><li>Run the five tasks and read the logs.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>The loop: call the model → if it asked for tools, run them and add the results → repeat; otherwise stop.</li><li>A tool error is just another message to the model.</li><li>Resolve the file path and check it starts with the sandbox folder before reading.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Completed <code>agent.py</code></li><li>Run logs for the five tasks</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L3-0"><span>Solves at least three of five tasks</span></label></li><li><label><input type="checkbox" data-k="L3-1"><span>Stops at the step limit on the impossible task</span></label></li><li><label><input type="checkbox" data-k="L3-2"><span>A <code>../</code> path attempt is blocked and logged</span></label></li><li><label><input type="checkbox" data-k="L3-3"><span>Each step prints tokens and the tool name</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Allow several tool calls in one turn.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>A loop with no limit</li><li>Letting the context grow without bound</li><li>Trusting file paths the model gives you</li></ul></div></div>
+</div></details><details class="lab" id="lab-L4">
+<summary><span class="lid">L4</span><span class="lt">From a vague request to a working feature</span><span class="tag t-a">Track A · Building with agents</span><span class="meta">Day 3 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Practise the spec → tests → plan → build workflow with an agent.</p>
+  <p><strong>Starter.</strong> <code>starter/orders-app</code> — a small web app and API with tests, a spec template, and a deliberately vague one-paragraph feature request.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator shows how to ask the agent for ambiguities and compares a vague criterion with a testable one.</p>
+  <h5>Tasks</h5><ol><li>Ask the agent to list what is unclear in the request. Resolve at least four and write them down as assumptions.</li><li>Fill in the spec template: problem, scope, what is out of scope, requirements, and acceptance criteria that a test can check.</li><li>Write the acceptance tests before any implementation. The agent can help, but you read every test.</li><li>Write a plan with at most five small tasks.</li><li>Build one task at a time with the agent and commit after each.</li><li>Note in <code>deviations.md</code> anywhere you ended up differing from the spec, and why.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>A good criterion reads: given X, when Y, then Z.</li><li>If you cannot write a test for it, the criterion is too vague.</li><li>Keep each task small enough to review the diff in five minutes.</li></ul></details>
+  <h5>Deliverables</h5><ul><li><code>spec.md</code>, <code>plan.md</code>, <code>deviations.md</code></li><li>Acceptance tests</li><li>One commit per task</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L4-0"><span>At least four unclear points resolved and written down</span></label></li><li><label><input type="checkbox" data-k="L4-1"><span>Every acceptance criterion has a test</span></label></li><li><label><input type="checkbox" data-k="L4-2"><span>All tests pass</span></label></li><li><label><input type="checkbox" data-k="L4-3"><span>Deviations written down, or "none" with a reason</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>On another branch, ask the agent to "just build it" from the raw request and compare the bugs.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Vague words like "fast" or "easy to use"</li><li>Tests that just copy what the code does</li><li>Tasks too big to review</li></ul></div></div>
+</div></details><details class="lab" id="lab-L5">
+<summary><span class="lid">L5</span><span class="lt">An independent reviewer and a reusable skill</span><span class="tag t-a">Track A · Building with agents</span><span class="meta">Day 4 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Build a reviewer that does not see the writer's thinking, deal with its findings, and package it so it can be reused.</p>
+  <p><strong>Starter.</strong> Your L4 code, a findings template, and <code>starter/sample-repo-2</code> for the reuse test.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator builds a minimal review skill live and shows how a fresh context behaves differently from the writing session.</p>
+  <h5>Tasks</h5><ol><li>Create a reusable review skill, command or subagent for your tool. It starts with a fresh context and reports findings in a fixed format: ID, severity, file and line, issue, fix.</li><li>Run it on your L4 code.</li><li>Go through each finding in <code>findings.md</code>: accept it, dismiss it with a reason, or escalate it.</li><li>Give the accepted findings to the writer agent, then run the reviewer again. Note what changed between round one and round two.</li><li>Add a simple hook or script that stops a commit if the tests fail.</li><li>Prove it is reusable: write a short README, then install and run the skill in <code>sample-repo-2</code> using only your README.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Start the reviewer in a new session so it cannot see the earlier chat.</li><li>Ask it to look for problems, not to confirm things are fine.</li><li>If a finding is wrong, say so in <code>findings.md</code> and why; that counts as a good result.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Skill folder with README</li><li><code>findings.md</code> with your decisions</li><li>Hook or script</li><li>Notes on rounds one and two</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L5-0"><span>The reviewer runs in a fresh context</span></label></li><li><label><input type="checkbox" data-k="L5-1"><span>Findings use the fixed format</span></label></li><li><label><input type="checkbox" data-k="L5-2"><span>At least one finding dismissed with a good reason</span></label></li><li><label><input type="checkbox" data-k="L5-3"><span>Round two shows the reviewer re-checking the fixes</span></label></li><li><label><input type="checkbox" data-k="L5-4"><span>The hook blocks a commit when a test fails</span></label></li><li><label><input type="checkbox" data-k="L5-5"><span>The skill ran in <code>sample-repo-2</code> from your README alone</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Use a different model for the reviewer and note whether it finds different problems.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>A reviewer that only praises</li><li>Showing the reviewer the writer's reasoning</li><li>A hook so noisy you switch it off</li></ul></div></div>
+</div></details><details class="lab" id="lab-L6">
+<summary><span class="lid">L6</span><span class="lt">A backlog item to a pull request, gate by gate</span><span class="tag t-a">Track A · Building with agents</span><span class="meta">Day 5 · 2 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Take one small change through the whole agent-assisted process, with a decision at each gate.</p>
+  <p><strong>Starter.</strong> Two small backlog items in <code>starter/backlog/</code> (pick one), your L4 repository, and a short worktree cheat sheet.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator shows an example <code>artifacts/</code> folder and one written go / no-go decision.</p>
+  <h5>Tasks</h5><ol><li>Move the item through: refine the story → short design note → task list → code and tests → independent review → PR description. Save one markdown file per stage in <code>artifacts/</code>.</li><li>At each gate write go or no-go and the evidence for it.</li><li>Run two agents on two separate tasks at the same time using worktrees (follow the cheat sheet), then merge.</li><li>Write the PR description so each acceptance criterion points to a test.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Gates are quick: one paragraph and one piece of evidence is enough.</li><li>Give each parallel agent a different file or folder.</li><li>If the merge conflicts, that is normal; resolve it and note it.</li></ul></details>
+  <h5>Deliverables</h5><ul><li><code>artifacts/</code> folder with six files</li><li>Merged branch</li><li>Decision log</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L6-0"><span>Six stage files exist</span></label></li><li><label><input type="checkbox" data-k="L6-1"><span>At least one gate decision is "no-go / rework", with a reason</span></label></li><li><label><input type="checkbox" data-k="L6-2"><span>The two branches merged, with any conflicts noted</span></label></li><li><label><input type="checkbox" data-k="L6-3"><span>The PR description links criteria to tests</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Write a small script that runs the stages in order.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Skipping gates when short of time</li><li>Two agents editing the same file</li></ul></div></div>
+</div></details><details class="lab" id="lab-L7">
+<summary><span class="lid">L7</span><span class="lt">Design tools for an agent, and wrap them in MCP</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 6 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Design a small set of tools an agent can use well, and see how much the descriptions matter.</p>
+  <p><strong>Starter.</strong> <code>starter/orders-api</code> — a mock REST API with six endpoints (one destructive), an MCP server template, and eight task prompts.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator turns one endpoint into a tool live and shows how a good description changes the agent's choice.</p>
+  <h5>Tasks</h5><ol><li>Choose at most four tools. Write each name, description and parameters. Decide which endpoint to hide or guard, and write why.</li><li>Implement them as function-calling tools, then expose them with the MCP server template.</li><li>Connect an agent and run the eight task prompts.</li><li>Make the descriptions worse on purpose (vague names, overlapping tools), run again, and note the difference.</li><li>Make errors helpful: return a clear message and a hint about what to try next.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Describe a tool the way you would explain it to a new colleague.</li><li>A tool that deletes something should ask for explicit confirmation or not exist.</li><li>Keep tool outputs short; long outputs confuse the agent.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your tool code and MCP server</li><li><code>tool-design.md</code></li><li>Before/after table</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L7-0"><span>The destructive action needs confirmation, or is left out with a reason</span></label></li><li><label><input type="checkbox" data-k="L7-1"><span>At least five of eight tasks succeed</span></label></li><li><label><input type="checkbox" data-k="L7-2"><span>The before/after table shows a difference and you explain it</span></label></li><li><label><input type="checkbox" data-k="L7-3"><span>Errors include a hint</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Add an MCP resource or a prompt template.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>One tool per endpoint without thinking</li><li>Tools that overlap</li><li>Very long outputs</li></ul></div></div>
+</div></details><details class="lab" id="lab-L8">
+<summary><span class="lid">L8</span><span class="lt">A support agent with limits that are enforced</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 7 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Build a single agent whose limits are enforced in code, and see how it behaves when things go wrong.</p>
+  <p><strong>Starter.</strong> <code>starter/support-agent</code> — agent skeleton with <code>TODO</code> markers, your L7 tools, 15 support scenarios, and a failure-injection switch.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator shows where a limit belongs in code, and why putting it only in the prompt is not enough.</p>
+  <h5>Tasks</h5><ol><li>Complete the agent with <code>lookup_order</code>, <code>search_kb</code> (stub), <code>create_ticket</code> and <code>escalate_to_human</code>.</li><li>Enforce three limits in code: a step limit, a token budget, and the rule that refunds always go to a human.</li><li>Make the agent write its plan before it acts, and log it.</li><li>Turn on the failure-injection switch (tools sometimes fail or return bad data) and fix what breaks.</li><li>When an order number is missing, make the agent ask a question instead of guessing.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Check limits inside the loop, before each model call.</li><li>Treat a refund request as a hand-off, not a tool call.</li><li>When a tool fails twice, escalate rather than retrying forever.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Agent code</li><li><code>guardrails.md</code></li><li>Failure-injection run report</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L8-0"><span>No run goes past the step or token limit in 10 runs</span></label></li><li><label><input type="checkbox" data-k="L8-1"><span>No refund is ever carried out without escalation</span></label></li><li><label><input type="checkbox" data-k="L8-2"><span>Every injected failure ends in a recovery or an escalation</span></label></li><li><label><input type="checkbox" data-k="L8-3"><span>Missing order numbers lead to a question</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Summarise the conversation after a few turns without losing key facts.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Limits that exist only in the prompt</li><li>Retrying forever</li><li>Silent failures</li></ul></div></div>
+</div></details><details class="lab" id="lab-L9">
+<summary><span class="lid">L9</span><span class="lt">Give the agent knowledge: RAG with citations</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 8 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Let the agent answer from documents, show its sources, and measure how well retrieval works.</p>
+  <p><strong>Starter.</strong> <code>starter/policy-corpus</code> — about 30 documents, 20 questions with the right source, 4 unanswerable questions, audience tags, and ingest and scoring helpers.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator indexes the documents live and shows one question that retrieves the wrong chunk.</p>
+  <h5>Tasks</h5><ol><li>Run the ingest helper to chunk, embed and index the documents.</li><li>Give the agent a retrieval tool that returns chunks with their source IDs.</li><li>Make answers cite sources. For unanswerable questions the agent says it does not know.</li><li>Measure how often the right document is in the top 5 (hit@5) with two chunk sizes, using the scoring helper.</li><li>Use the filter helper so restricted documents are never returned to the wrong role.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Try a small chunk size and a large one; compare the numbers, not your feeling.</li><li>Check each citation actually appears in what was retrieved.</li><li>Write the access test first: ask as the wrong role and expect nothing back.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your pipeline code</li><li><code>retrieval-report.md</code></li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L9-0"><span>hit@5 reported for two chunk sizes</span></label></li><li><label><input type="checkbox" data-k="L9-1"><span>Every answer cites sources that were retrieved</span></label></li><li><label><input type="checkbox" data-k="L9-2"><span>At least three of four unanswerable questions handled correctly</span></label></li><li><label><input type="checkbox" data-k="L9-3"><span>The access test passes</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Try rewriting the user's question before searching and report the effect.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Picking chunk sizes by guess</li><li>Returning restricted documents</li><li>Citations the agent invented</li></ul></div></div>
+</div></details><details class="lab" id="lab-L10">
+<summary><span class="lid">L10</span><span class="lt">Build an evaluation and improve by evidence</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 9 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Create a repeatable test for your agent and use it to decide what to improve.</p>
+  <p><strong>Starter.</strong> <code>starter/eval</code> — 12 ready-made test cases, a runner, a judge prompt template, and a score report.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator runs the eval on a deliberately weak agent, reads two failures, and explains the score.</p>
+  <h5>Tasks</h5><ol><li>Add 8 of your own cases to the 12 provided (at least 3 awkward ones and 3 adversarial ones). Set 5 aside as a held-out group.</li><li>Write two code checks (for example: the right tool was called, refunds escalated) and use the provided judge for answer quality.</li><li>Check the judge: label 6 answers yourself and compare. Note where it disagrees and adjust the judge prompt.</li><li>Run the baseline, make two improvements that each fix a specific failure, then run again and compare scores, including the held-out group.</li><li>Add a small script that fails if the score drops below a threshold.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Write what you expect the agent to do before you run it.</li><li>Fix one failure at a time and re-run.</li><li>If the held-out score is far lower than the rest, you have over-fitted.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your <code>eval/</code> folder</li><li>Baseline and after reports</li><li>Threshold script</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L10-0"><span>At least 20 cases, each with a category</span></label></li><li><label><input type="checkbox" data-k="L10-1"><span>Judge agrees with your labels on at least 4 of 6, or you explain the gap</span></label></li><li><label><input type="checkbox" data-k="L10-2"><span>Two improvements linked to specific failures</span></label></li><li><label><input type="checkbox" data-k="L10-3"><span>The threshold script fails on a deliberately worse version</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Run each case three times and look at how much the score varies.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Using the agent's own model as the only judge</li><li>Tuning to the test cases only</li><li>No held-out group</li></ul></div></div>
+</div></details><details class="lab" id="lab-L11">
+<summary><span class="lid">L11</span><span class="lt">Trace it, measure it, make it cheaper</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 10 · 2 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> See exactly what your agent does, then reduce its cost without making it worse.</p>
+  <p><strong>Starter.</strong> Your L10 agent and eval, plus a tracing template.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator adds tracing to a small agent live and reads one trace aloud.</p>
+  <h5>Tasks</h5><ol><li>Add tracing using the template: one entry per model call and per tool call, with tokens and time.</li><li>Produce a short report: success rate, typical and slowest time, and tokens and cost per task.</li><li>Reduce cost: use a cheaper model for simple steps, trim the context, cap tool output length.</li><li>Run the L10 eval again and write a before/after comparison that includes quality.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Find the most expensive step first and change only that.</li><li>Always run the eval after a cost change.</li><li>Do not put personal data into traces.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Tracing code</li><li><code>report.md</code> with before and after</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L11-0"><span>Every run produces a complete trace</span></label></li><li><label><input type="checkbox" data-k="L11-1"><span>Cost per task drops by at least 20% with quality within the tolerance you were given</span></label></li><li><label><input type="checkbox" data-k="L11-2"><span>The report names the top three costs</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Add an alert when a single task spends more than a set amount.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Cutting cost without an eval</li><li>Logging sensitive data</li></ul></div></div>
+</div></details><details class="lab" id="lab-L12">
+<summary><span class="lid">L12</span><span class="lt">A multi-agent pipeline versus one agent</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 11 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Build a small team of agents with an independent reviewer, and check whether it really beats a single agent.</p>
+  <p><strong>Starter.</strong> <code>starter/incidents</code> — three incident bundles with planted mistakes, an orchestrator skeleton with two researcher agents already wired in, JSON schema files, and a scoring rubric.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator runs the skeleton end to end and points out where the hand-offs happen.</p>
+  <h5>Tasks</h5><ol><li>Baseline: let one agent write a postmortem for each incident and score it with the rubric.</li><li>Add a writer agent and an independent reviewer agent (new context) to the skeleton. The reviewer checks claims against the sources.</li><li>Make every hand-off follow the provided JSON schemas and check them in code.</li><li>Compare with the baseline on accuracy, completeness, cost and time.</li><li>Write a few sentences on when the team was and was not worth the extra cost.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Give the reviewer the sources and the draft, but not the writer's reasoning.</li><li>If a hand-off fails validation, print the message and the schema side by side.</li><li>Put a limit on review rounds.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your system code</li><li><code>comparison.md</code></li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L12-0"><span>All hand-offs are checked against a schema</span></label></li><li><label><input type="checkbox" data-k="L12-1"><span>The reviewer catches at least one planted mistake</span></label></li><li><label><input type="checkbox" data-k="L12-2"><span>The comparison covers quality, cost and time</span></label></li><li><label><input type="checkbox" data-k="L12-3"><span>Your conclusion is backed by the numbers</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Add a second review round, with a limit of two.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Agents sharing one context</li><li>Hand-offs in free text</li><li>Review loops with no limit</li></ul></div></div>
+</div></details><details class="lab" id="lab-L13">
+<summary><span class="lid">L13</span><span class="lt">Make it recoverable, with a human decision point</span><span class="tag t-b">Track B · Building agentic systems</span><span class="meta">Day 12 · 2 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Make your multi-agent run survive a crash, and put a person where the risk is highest.</p>
+  <p><strong>Starter.</strong> Your L12 system and a small checkpoint helper.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator saves state after one step, stops the process, and resumes it.</p>
+  <h5>Tasks</h5><ol><li>Save the run's state after every agent step.</li><li>Stop the program part-way and resume it without repeating finished steps.</li><li>Add an approval step before publishing: continue automatically only when the reviewer is confident and no serious findings are open; otherwise wait for a person.</li><li>Write a decision log: who decided, what, why, when.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Save state before moving on, not after.</li><li>If a step sends something, record that it was sent so you do not send it twice.</li><li>Make sure there is only one path to the publish step.</li></ul></details>
+  <h5>Deliverables</h5><ul><li>Your orchestrator code</li><li>A short crash-and-resume demonstration</li><li>Decision log</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L13-0"><span>Resuming does not repeat finished work</span></label></li><li><label><input type="checkbox" data-k="L13-1"><span>The approval step blocks when findings are open</span></label></li><li><label><input type="checkbox" data-k="L13-2"><span>The decision log is complete</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Handle two runs at the same time.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Repeating side effects on resume</li><li>A way around the approval step</li></ul></div></div>
+</div></details><details class="lab" id="lab-L14">
+<summary><span class="lid">L14</span><span class="lt">Attack an agent, then harden it</span><span class="tag t-c">Cross-cutting · Security &amp; governance</span><span class="meta">Day 13 · 3 h</span></summary>
+<div class="labbody">
+  <p class="obj"><strong>Objective.</strong> Think like an attacker for a while, then fix what you find.</p>
+  <p><strong>Starter.</strong> <code>starter/vulnerable-agent</code> — an assistant with email, file and web tools plus RAG, with deliberate weaknesses, and five ready-made attack documents.</p>
+  <p class="guided"><strong>Guided start.</strong> The facilitator runs one injection attack live and shows what the agent does with it.</p>
+  <h5>Tasks</h5><ol><li>Write a short threat model: what the agent can touch, how data gets in, what you do not trust.</li><li>Try three of the five attack documents and record what happened.</li><li>Harden the agent: give each tool only the access it needs, allow only approved web addresses, ask for approval before sensitive actions, treat document text as data not instructions.</li><li>Run the same attacks again and show they now fail, or note what risk remains.</li><li>Add a log of every tool call.</li></ol>
+  <details class="hints"><summary>Hint cards</summary><ul><li>Ask: what is the worst thing this tool could do if the model were tricked?</li><li>Telling the model "don't" is not enough; remove the ability.</li><li>Never put secrets into the prompt.</li></ul></details>
+  <h5>Deliverables</h5><ul><li><code>threat-model.md</code></li><li>Attack notes</li><li>Hardened code</li><li>Sample tool-call log</li></ul>
+  <h5>Acceptance criteria <span class="hint">(tick as you go; saved in this browser)</span></h5>
+  <ul class="check"><li><label><input type="checkbox" data-k="L14-0"><span>Three attacks worked before hardening and are recorded</span></label></li><li><label><input type="checkbox" data-k="L14-1"><span>The same attacks fail afterwards, or the remaining risk is written down</span></label></li><li><label><input type="checkbox" data-k="L14-2"><span>Sensitive actions need approval</span></label></li><li><label><input type="checkbox" data-k="L14-3"><span>Secrets never appear in prompts or logs</span></label></li></ul>
+  <div class="two"><div><h5>Stretch</h5><ul><li>Add your attacks to your eval as test cases.</li></ul></div><div><h5>Common pitfalls</h5><ul><li>Relying only on instructions to the model</li><li>Securing the prompt but not the tools</li></ul></div></div>
+</div></details>
+</section>
+
+<section id="assessment">
+  <h2>Assessment</h2>
+  <p class="lead">Practical, not quiz-based. You are judged on what you can build, check and explain, working on your own.</p>
+  <div class="grid2"><div class="card"><div class="cid">A1 <small>Day 5 · Review a flawed agent-written PR</small></div><h4>1 h</h4><p>You receive a pull request written by an agent. It has several problems: a missed edge case, a made-up API call, an unsafe default, a test that checks nothing, and a change nobody asked for. You may use the review checklist and your own notes.</p><p><strong>Task.</strong> Find and write down the problems, rank them, and decide merge or rework with reasons. Scored on the problems found, the reasoning and a clear decision.</p></div><div class="card"><div class="cid">A2 <small>Day 10 · Find the cause in failing traces</small></div><h4>1 h</h4><p>You receive three traces of agent runs that failed: the context grew too large, a vague tool description caused the wrong tool, and a retry loop never ended. You may use the trace-reading guide.</p><p><strong>Task.</strong> Name the cause of each, suggest a fix, and say how you would test the fix with an eval. Scored on the diagnosis and the quality of the test you propose.</p></div></div>
+  <h3 style="margin-top:26px">How the final result is weighted</h3>
+  <div class="card" style="margin-top:8px"><div class="wrow"><span>Daily labs (14), acceptance criteria met</span><div class="bar"><i style="width:40%"></i></div><b>40%</b></div><div class="wrow"><span>A1 checkpoint</span><div class="bar"><i style="width:10%"></i></div><b>10%</b></div><div class="wrow"><span>A2 checkpoint</span><div class="bar"><i style="width:10%"></i></div><b>10%</b></div><div class="wrow"><span>Capstone</span><div class="bar"><i style="width:40%"></i></div><b>40%</b></div>
+    <p style="color:var(--muted);font-size:13px;margin:12px 0 0"><strong>Passing:</strong> at least 65% overall, with no checkpoint or the capstone below 40%. A lab counts when all its acceptance criteria are met; facilitators may accept a documented, reasoned exception. The checkpoints are open-book: you may use the checklist, the guide and your notes.</p>
+  </div>
+</section>
+
+<section id="capstone">
+  <h2>Capstone</h2>
+  <p class="lead">Each participant builds and presents a small multi-agent system on their own. You are not starting from nothing: the capstone <strong>extends your own L8–L13 work</strong> to a new scenario, using a scaffold repository that already has an orchestrator skeleton.</p>
+  <h3>Scenario options</h3>
+  <div class="grid2" style="margin:8px 0 22px"><div class="card"><h4>Support resolution assistant</h4><p>Classifies a case, finds the answer in a knowledge base with citations, drafts a reply, and hands refunds and exceptions to a person.</p></div><div class="card"><h4>Bug-report triage assistant</h4><p>Reads a bug report, finds likely causes in a small sample codebase, and drafts a suggested fix for a person to review.</p></div><div class="card"><h4>Document compliance checker</h4><p>Checks a short document against a rule list and returns findings, each with evidence.</p></div><div class="card"><h4>Your own idea</h4><p>Agree it with a facilitator at the scoping session; it must meet the same requirements.</p></div></div>
+  <div class="grid2">
+    <div class="card"><h4>Minimum requirements</h4><ul><li>At least three agent roles, one of them an independent reviewer with its own context</li><li>Tools with at least one guarded action</li><li>A knowledge source with citations and a role-based access check</li><li>Hand-offs checked against schemas, saved state, and an approval step for risky actions</li><li>An eval of at least 15 cases with a held-out group, a threshold script, and one measured improvement</li><li>A trace and a short cost report</li><li>A threat model with two attacks tried and fixed</li><li>Process evidence: a spec, a plan, review findings and a decision log</li></ul></div>
+    <div class="card"><h4>Scoring rubric (100)</h4><table class="plain"><tr><td>Spec and process evidence</td><td class="num">15</td></tr><tr><td>System design</td><td class="num">15</td></tr><tr><td>Agent quality (eval results)</td><td class="num">20</td></tr><tr><td>Reliability, tracing and cost</td><td class="num">10</td></tr><tr><td>Security</td><td class="num">10</td></tr><tr><td>Human oversight and governance</td><td class="num">10</td></tr><tr><td>Demo and explanation</td><td class="num">10</td></tr><tr><td>Reflection: what you would do differently</td><td class="num">10</td></tr></table></div>
+  </div>
+  <div class="callout"><strong>Timeline.</strong> Scoping on Day 12 (1 h). On Day 14, a 10-minute one-to-one design check with a facilitator in the morning and an eval and trace review at 13:30. On Day 15, finish and present a 7-minute demo. Submit your repository, eval report, cost report, threat model and decision log.</div>
+</section>
+
+<section id="plan">
+  <h2>Training plan</h2>
+  <p class="lead">How each day runs, and how to keep a group of beginners moving together.</p>
+  <h3>Daily rhythm</h3>
+  <div class="panel" style="margin:8px 0 22px"><table class="plain"><tr><th>Time</th><th>Block</th><th>Notes</th></tr><tr><td class="min">09:30</td><td><strong>Check-in and recap (15 min)</strong></td><td>One question from yesterday, and one participant explains something they built.</td></tr><tr><td class="min">09:45</td><td><strong>Concepts (about 105 min)</strong></td><td>Short blocks of 20–30 minutes with a quick question or poll after each.</td></tr><tr><td class="min">11:30</td><td><strong>Guided walkthrough (45 min)</strong></td><td>The facilitator live-codes the first steps of the day's lab while you follow along.</td></tr><tr><td class="min">12:15</td><td><strong>Lunch (1 h)</strong></td><td></td></tr><tr><td class="min">13:15</td><td><strong>Lab, working on your own (3 h)</strong></td><td>Facilitators circulate. Hint cards and cheat sheets are available. Office hour for the last 30 minutes.</td></tr><tr><td class="min">16:15</td><td><strong>Debrief (30 min)</strong></td><td>Two participants show results, you explain one thing back, and the facilitator names the one lesson of the day.</td></tr><tr><td class="min">16:45</td><td><strong>Close</strong></td><td>A 15-minute pre-read for tomorrow at most.</td></tr></table></div>
+  <div class="grid2">
+    <div class="card"><h4>Keeping everyone together</h4>
+      <ul>
+        <li>Everyone starts from the same scaffolds; they get thinner as the course goes on.</li>
+        <li>The guided walkthrough means nobody starts a lab cold.</li>
+        <li>Daily office hour in the last 30 minutes of the lab block.</li>
+        <li>Recorded walkthroughs and reference solutions for catching up.</li>
+        <li>Everyone explains one thing back at each debrief.</li>
+      </ul></div>
+    <div class="card"><h4>Cohort and facilitation</h4>
+      <ul>
+        <li>Up to 18 participants per cohort.</li>
+        <li>One facilitator per six participants.</li>
+        <li>Extra environment support on Days 1–2 and Day 6.</li>
+        <li>Run the cohort in person or live-online; labs are the same either way.</li>
+      </ul></div>
+  </div>
+</section>
+
+<section id="glossary">
+  <h2>Glossary</h2>
+  <p class="lead">Plain-language definitions of the terms you will meet. Keep this open during the first week.</p>
+  <dl class="gloss"><div class="term"><dt>Token</dt><dd>A small piece of text (part of a word) that a model reads and writes. Cost and limits are counted in tokens.</dd></div><div class="term"><dt>Context window</dt><dd>The amount of text a model can consider at once: your instructions, the conversation, and any documents.</dd></div><div class="term"><dt>Prompt</dt><dd>The instructions and information you give a model.</dd></div><div class="term"><dt>Temperature</dt><dd>A setting that controls how much a model's answers vary. Low is steadier; high is more varied.</dd></div><div class="term"><dt>Hallucination</dt><dd>When a model states something that sounds right but is wrong or made up.</dd></div><div class="term"><dt>Structured output</dt><dd>Asking the model to answer in a fixed format, such as JSON, so code can use the result.</dd></div><div class="term"><dt>Tool / function calling</dt><dd>Letting a model ask your code to do something, like look up an order, and use the result.</dd></div><div class="term"><dt>Agent</dt><dd>A model running in a loop: it decides what to do, uses tools, looks at the result, and repeats until done.</dd></div><div class="term"><dt>Coding agent</dt><dd>An agent that reads and edits your code and runs commands, for example to fix a bug.</dd></div><div class="term"><dt>Spec</dt><dd>A written description of what to build, including how you will know it works.</dd></div><div class="term"><dt>Acceptance criterion</dt><dd>A statement a test can check to confirm a feature works.</dd></div><div class="term"><dt>Independent reviewer</dt><dd>A second agent with a fresh context that checks the first one's work.</dd></div><div class="term"><dt>Finding</dt><dd>A problem a reviewer reports, with severity, location and a suggested fix.</dd></div><div class="term"><dt>Skill / hook</dt><dd>A reusable instruction set for an agent (skill), and an automatic check that runs at a set point, such as before a commit (hook).</dd></div><div class="term"><dt>MCP</dt><dd>Model Context Protocol: a standard way to offer tools and data to agents.</dd></div><div class="term"><dt>RAG</dt><dd>Retrieval-augmented generation: find relevant documents first, then let the model answer using them.</dd></div><div class="term"><dt>Embedding</dt><dd>A list of numbers that represents the meaning of text, used to find similar text.</dd></div><div class="term"><dt>Eval</dt><dd>A repeatable test that scores how well an agent does on a set of cases.</dd></div><div class="term"><dt>LLM judge</dt><dd>A model used to grade another model's answers against a rubric.</dd></div><div class="term"><dt>Guardrail</dt><dd>A limit or check that stops an agent from doing something unsafe or wasteful.</dd></div><div class="term"><dt>Prompt injection</dt><dd>An attack where text in a document or message tricks the model into following the attacker's instructions.</dd></div><div class="term"><dt>Multi-agent system</dt><dd>Several agents with different roles working together, often with an orchestrator.</dd></div><div class="term"><dt>Orchestrator</dt><dd>The part that decides which agent does what, and passes results between them.</dd></div><div class="term"><dt>Hand-off</dt><dd>The message one agent passes to another.</dd></div><div class="term"><dt>Trace</dt><dd>A record of every model call and tool call in a run, used to find out what happened.</dd></div><div class="term"><dt>Idempotent</dt><dd>Safe to repeat: doing it twice has the same effect as doing it once.</dd></div></dl>
+</section>
+
+<section id="instructor">
+  <h2>Instructor guide</h2>
+  <p class="lead">What to prepare before the first cohort, and what can go wrong.</p>
+  <div class="grid2">
+    <div class="card"><h4>Preparation checklist</h4><ul><li>Choose <strong>Python</strong> for the whole cohort and prepare every starter repository in Python: <code>bugfix-repo</code>, <code>orders-app</code>, <code>orders-api</code>, <code>support-agent</code>, <code>policy-corpus</code>, <code>eval</code>, <code>incidents</code>, <code>vulnerable-agent</code>, <code>sample-repo-2</code>, <code>backlog</code>, and the capstone scaffold.</li><li>Starter code must run on first try. Dry-run every lab as a beginner would, on a fresh machine, and fix every <code>TODO</code> that is unclear.</li><li>Write a hint card and a one-page cheat sheet for every day, a worktree cheat sheet (L6), a review checklist (A1) and a trace-reading guide (A2).</li><li>Record the guided walkthroughs so a participant who falls behind can replay them.</li><li>Create the shared API gateway with a per-participant spending cap and a usage dashboard. Pilot Days 6–13 to calibrate the cap.</li><li>Default every lab to a smaller, cheaper model; use the stronger model only where a lab compares sizes.</li><li>Prepare reference solutions and grading sheets with the acceptance criteria. Pre-build the flawed PR (A1) and the three traces (A2), and have a second facilitator confirm the planted problems can be found.</li><li>Agree acceptable-use and data rules: no real customer data, no secrets in prompts, no production credentials.</li><li>Staff at one facilitator per six participants, plus one person on environment support on Days 1–2 and Day 6.</li></ul></div>
+    <div class="card"><h4>Measuring success</h4><ul><li>Self-assessment before and after: every participant rates themselves at least "can do with support" on each outcome.</li><li>At least 80% of participants pass A1, A2 and the capstone.</li><li>30/60/90-day follow-up: each participant ships at least one agent-assisted change with a spec, review findings and a decision record, and adds one reusable skill or tool to a shared library.</li><li>Where measurable: cycle time, rework and escaped defects on agent-assisted work compared with a baseline.</li></ul></div>
+  </div>
+  <h3 style="margin-top:24px">Risks and mitigations</h3>
+  <div class="panel" style="margin-top:8px"><table class="plain"><tr><th>Risk</th><th>Mitigation</th></tr><tr><td>Beginners get stuck and fall behind</td><td>Scaffolded starter code, hint cards, the stuck ladder, daily office hours and recorded walkthroughs. A short catch-up slot is built into the end of each lab block.</td></tr><tr><td>Setup problems eat Day 1</td><td>Setup clinic before Day 1, a <code>make doctor</code> check, and a pre-built fallback environment.</td></tr><tr><td>Participants let the agent do the lab without understanding it</td><td>Explain-it-back at every debrief, mandatory written review comments, and the A1 and A2 checkpoints.</td></tr><tr><td>Tool or model changes during the course</td><td>Teach patterns, keep tool-specific steps in thin layers, pin versions, and keep a fallback model ready.</td></tr><tr><td>API outages or rate limits</td><td>Gateway with retries and a second provider configured; Days 1–3 labs designed to degrade gracefully.</td></tr><tr><td>Runaway spend</td><td>Per-participant caps, step limits in every lab, and a daily usage review.</td></tr><tr><td>The capstone is too big for one person</td><td>It extends your own earlier labs from a scaffold, with a fixed minimum scope and a one-to-one design check on Day 14.</td></tr></table></div>
+  <footer>Starter repositories, datasets and reference solutions named in the labs need to be created before delivery; this guide specifies what each must contain.</footer>
+</section>
+</main>
+</div>
+<script>
+// persist acceptance-criteria ticks
+document.querySelectorAll('input[data-k]').forEach(function(cb){
+  var k='ainative-'+cb.dataset.k;
+  try{cb.checked=localStorage.getItem(k)==='1'}catch(e){}
+  cb.addEventListener('change',function(){try{localStorage.setItem(k,cb.checked?'1':'0')}catch(e){}});
+});
+// open lab when linked
+function openHash(){var el=document.querySelector(location.hash||'#none');if(el&&el.tagName==='DETAILS'){el.open=true;el.scrollIntoView()}}
+window.addEventListener('hashchange',openHash);openHash();
+// open all details when printing
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true})});
+// highlight current section in the nav
+var links=[].slice.call(document.querySelectorAll('nav.side a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+window.addEventListener('scroll',spy);spy();
+</script>
+</body>
+</html>

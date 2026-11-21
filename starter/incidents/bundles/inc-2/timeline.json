@@ -1,0 +1,18 @@
+[
+ {
+  "t": "09:12",
+  "e": "cache-3 OOM"
+ },
+ {
+  "t": "09:20",
+  "e": "alert fired"
+ },
+ {
+  "t": "09:40",
+  "e": "cache-3 restarted"
+ },
+ {
+  "t": "09:44",
+  "e": "latency normal"
+ }
+]

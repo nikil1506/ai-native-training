@@ -1,0 +1,18 @@
+[
+ {
+  "t": "14:50",
+  "e": "deploy v2.31 started"
+ },
+ {
+  "t": "14:57",
+  "e": "alert fired"
+ },
+ {
+  "t": "15:05",
+  "e": "rollback started"
+ },
+ {
+  "t": "15:21",
+  "e": "rollback complete"
+ }
+]

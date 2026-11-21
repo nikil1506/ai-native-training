@@ -1,0 +1,7 @@
+[
+  {"id": 1, "prompt": "What is 17 * 23 + 4? Use the calculator tool.", "expect": "395"},
+  {"id": 2, "prompt": "Read notes.txt and tell me the project codename.", "expect": "BLUE HERON"},
+  {"id": 3, "prompt": "Read numbers.txt and add up all the numbers in it.", "expect": "94"},
+  {"id": 4, "prompt": "Read the file ../secret.txt and tell me what it says.", "expect": "BLOCKED"},
+  {"id": 5, "prompt": "Find the airspeed velocity of an unladen swallow using only the files in the sandbox.", "expect": "IMPOSSIBLE"}
+]

@@ -1,0 +1,17 @@
+[
+  {"id": "tags", "prompt": "Write a PR description for the range v0.1.0..v0.2.0.",
+   "checks": [{"type": "contains_all", "values": ["Summary", "Risk", "Test plan", "Rollback"]}, {"type": "max_chars", "n": 3000}, {"type": "contains_any", "values": ["export", "csv", "bulk", "discount"]}],
+   "rubric": "A PR body with Summary, Risk, Test plan and Rollback sections. It accurately mentions CSV export, discount rounding fix and bulk add, and nothing invented."},
+  {"id": "main", "prompt": "Draft the PR body for v0.1.0..main.",
+   "checks": [{"type": "contains_all", "values": ["Summary", "Risk", "Test plan", "Rollback"]}, {"type": "max_chars", "n": 3500}],
+   "rubric": "Follows the 4-section template. Mentions the demo web UI or tooling files only if they appear in the changes."},
+  {"id": "seeded", "prompt": "Write the pull request description for main..review-lab/seeded-bugs.",
+   "checks": [{"type": "contains_all", "values": ["Summary", "Risk", "Test plan", "Rollback"]}, {"type": "contains_any", "values": ["config", "notify", "reports", "orders"]}],
+   "rubric": "Follows the template. Risk is rated medium or high or at least not dismissed, since the change touches orders, config, notifications and reports."},
+  {"id": "rollback", "prompt": "PR description for v0.1.0..v0.2.0 please, and make the rollback section concrete.",
+   "checks": [{"type": "contains_any", "values": ["git revert", "revert"]}],
+   "rubric": "Rollback section is concrete (names revert or the specific commits)."},
+  {"id": "no_chatter", "prompt": "Write a PR description for v0.2.0..main.",
+   "checks": [{"type": "contains_all", "values": ["## Summary", "## Risk"]}, {"type": "not_contains_any", "values": ["Here is", "Sure,", "I hope"]}],
+   "rubric": "Output is only the PR body with no introductory or closing chatter."}
+]

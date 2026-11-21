@@ -1,0 +1,19 @@
+[
+  {"id": "all_five", "prompt": "Review the range main..review-lab/seeded-bugs.",
+   "checks": [{"type": "contains_any", "values": ["except", "swallow"]}, {"type": "contains_any", "values": ["hardcoded", "api key", "api_key", "secret"]},
+              {"type": "contains_any", "values": ["email", "pii"]}, {"type": "contains_any", "values": ["sql", "injection", "concatenat"]},
+              {"type": "contains_any", "values": ["negative", "insufficient", "stock"]}],
+   "rubric": "Finds the 5 real problems: bare except in orders, hardcoded API key, logging customer email, SQL built by concatenation, removed insufficient-stock guard. Does not flag line length or the unused import."},
+  {"id": "security_only", "prompt": "Review main..review-lab/seeded-bugs, focusing only on security.",
+   "checks": [{"type": "contains_any", "values": ["hardcoded", "api key", "api_key", "secret"]}, {"type": "contains_any", "values": ["sql", "injection"]}],
+   "rubric": "Reports the hardcoded key and SQL injection. Security-focused."},
+  {"id": "no_linter_noise", "prompt": "Review main..review-lab/seeded-bugs.",
+   "checks": [{"type": "not_contains_any", "values": ["line length", "too long", "unused import"]}],
+   "rubric": "Does not report line length or unused import; those are linter-covered."},
+  {"id": "clean_range", "prompt": "Review the range v0.1.0..v0.2.0.",
+   "checks": [{"type": "not_contains_any", "values": ["hardcoded", "sql injection", "bare except"]}],
+   "rubric": "Does not invent serious violations; a clean or near-clean report is correct."},
+  {"id": "format", "prompt": "Review main..review-lab/seeded-bugs and list violations.",
+   "checks": [{"type": "regex", "pattern": "\\[standard \\d\\]"}],
+   "rubric": "Each finding is one line shaped like '- [standard N] path: problem and fix'."}
+]

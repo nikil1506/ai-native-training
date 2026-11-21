@@ -1,0 +1,17 @@
+[
+  {"id": "basic", "prompt": "Generate release notes for v0.2.0 (changes since v0.1.0).",
+   "checks": [{"type": "contains_all", "values": ["v0.2.0"]}, {"type": "contains_any", "values": ["CSV", "csv"]}, {"type": "contains_any", "values": ["discount", "rounding"]}, {"type": "contains_any", "values": ["bulk", "Bulk"]}],
+   "rubric": "Release notes headed with v0.2.0 that list CSV export, discount rounding fix and bulk add, grouped Added/Fixed."},
+  {"id": "grouping", "prompt": "Write a changelog between v0.1.0 and v0.2.0.",
+   "checks": [{"type": "contains_any", "values": ["### Added"]}, {"type": "contains_any", "values": ["### Fixed"]}],
+   "rubric": "Entries are grouped under Added and Fixed headings; the discount fix is under Fixed."},
+  {"id": "no_hashes", "prompt": "Release notes from v0.1.0 to v0.2.0 please.",
+   "checks": [{"type": "regex", "pattern": "^(?!.*\\b[0-9a-f]{7,40}\\b)"}, {"type": "not_contains_any", "values": ["Merge pull request"]}],
+   "rubric": "User-facing wording; no commit hashes and no raw 'Merge pull request' lines."},
+  {"id": "no_internal", "prompt": "Generate user-facing release notes for v0.2.0 since v0.1.0.",
+   "checks": [{"type": "not_contains_any", "values": ["Release 0.2.0"]}, {"type": "max_chars", "n": 1500}],
+   "rubric": "Concise; omits the internal version-bump commit."},
+  {"id": "no_chatter", "prompt": "Create the changelog for v0.2.0 compared with v0.1.0.",
+   "checks": [{"type": "not_contains_any", "values": ["Here is", "Sure,", "I hope"]}],
+   "rubric": "Only the release notes, no introductory chatter."}
+]

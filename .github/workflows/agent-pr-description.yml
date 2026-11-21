@@ -1,18 +1,36 @@
-# Session 5 template: fill in the TODOs live. Not runnable until configured.
+# Session 5: run the pr-description skill headless on every new PR.
+# NOTE: needs a SELF-HOSTED runner that can reach Ollama (HARNESS model on OLLAMA_HOST).
 name: agent-pr-description
 on:
   pull_request:
-    types: [opened]   # not `synchronize`: idempotency, see below
+    types: [opened]          # not `synchronize`: re-runs must not spam (see idempotency below)
 permissions:
   contents: read
-  pull-requests: write   # least privilege
+  pull-requests: write       # least privilege: can comment, cannot push
 jobs:
   describe:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    runs-on: self-hosted
+    timeout-minutes: 10      # hard wall-clock cap
+    env:
+      OLLAMA_HOST: http://localhost:11434
+      HARNESS_MODEL: qwen3.5:latest
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
-      # TODO: install agent CLI; run headless with a max-turns/budget cap and
-      #       restricted allowed-tools; save trace to runs/ and upload as artifact.
-      # TODO: idempotency: update the existing bot comment (marker <!-- pr-desc -->) instead of posting a new one.
+      - name: Generate description (budget: 8 turns, read-only tools, hooks on)
+        run: >
+          python -m harness skill pr-description
+          --task "Write a PR description for the range origin/${{ github.base_ref }}..HEAD."
+          --max-turns 8 --out pr_body.md
+      - uses: actions/upload-artifact@v4       # the trace is the audit log
+        if: always()
+        with: { name: agent-trace, path: runs/*.jsonl }
+      - name: Post or update the single bot comment (idempotent)
+        run: |
+          MARK='<!-- agent-pr-description -->'
+          { echo "$MARK"; cat pr_body.md; } > body.md
+          ID=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+               --jq "[.[] | select(.body | contains(\"$MARK\"))][0].id // empty")
+          if [ -n "$ID" ]; then gh api -X PATCH repos/${{ github.repository }}/issues/comments/$ID -F body=@body.md
+          else gh pr comment ${{ github.event.pull_request.number }} --body-file body.md; fi

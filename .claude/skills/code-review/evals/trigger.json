@@ -1,0 +1,26 @@
+{
+  "should_trigger": [
+    "Review the changes on review-lab/seeded-bugs",
+    "Can you do a code review of this diff?",
+    "Check this branch against our coding standards",
+    "Review main..HEAD for security problems",
+    "Look over my PR for bugs before I merge",
+    "Does this diff violate any of our standards?",
+    "Do a security review of the latest commits",
+    "Is there anything wrong with the error handling in this change?",
+    "Review my changes for logging and naming issues",
+    "Audit this branch for hardcoded secrets and SQL injection"
+  ],
+  "should_not_trigger": [
+    "Write a PR description for this branch",
+    "Write a commit message for my staged changes",
+    "Generate release notes for v0.2.0",
+    "Summarize this diff",
+    "Fix the bug in low_stock",
+    "Explain how the Inventory class works",
+    "Add tests for apply_discount",
+    "What does git cherry-pick do?",
+    "Write a changelog for the last release",
+    "Refactor orders.py to be shorter"
+  ]
+}

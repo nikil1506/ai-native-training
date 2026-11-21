@@ -1,0 +1,26 @@
+{
+  "should_trigger": [
+    "Write a PR description for the changes on this branch",
+    "Draft the pull request body for v0.1.0..v0.2.0",
+    "Generate a PR description with summary, risk and test plan",
+    "I'm about to open a PR for feat/bulk-add, can you write the description?",
+    "Create a pull request description for my latest changes",
+    "Fill in the PR template for main..HEAD",
+    "Help me write up this PR for the reviewers",
+    "Write the PR body, including a rollback plan",
+    "Produce a pull request summary and test plan for these commits",
+    "Describe this pull request for the team"
+  ],
+  "should_not_trigger": [
+    "Write a commit message for my staged changes",
+    "Review this diff for bugs",
+    "Generate release notes for v0.2.0",
+    "Summarize this diff in one sentence",
+    "Explain what git rebase does",
+    "Fix the failing test in tests/test_pricing.py",
+    "What changed between v0.1.0 and v0.2.0? Just list the files.",
+    "Add a docstring to validate_sku",
+    "Check my code against the team coding standards",
+    "Write a changelog entry"
+  ]
+}

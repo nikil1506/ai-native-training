@@ -349,6 +349,48 @@
       "labels": [
         "feature"
       ]
+    },
+    {
+      "id": "T-201",
+      "title": "validate_sku accepts trailing newline",
+      "status": "open",
+      "release": "R-2.0",
+      "assignee": "agent",
+      "blocked_by": [],
+      "labels": [
+        "bug",
+        "agent-ready"
+      ],
+      "description": "validate_sku('ABC-1234\\n') returns True; it must return False. Fix in shelfy/validators.py.",
+      "test": "capstone_tests/test_t201.py"
+    },
+    {
+      "id": "T-202",
+      "title": "low_stock should include items exactly at threshold",
+      "status": "open",
+      "release": "R-2.0",
+      "assignee": "agent",
+      "blocked_by": [],
+      "labels": [
+        "bug",
+        "agent-ready"
+      ],
+      "description": "Inventory.low_stock(5) omits SKUs with exactly 5 units; the threshold is inclusive. Fix in shelfy/inventory.py.",
+      "test": "capstone_tests/test_t202.py"
+    },
+    {
+      "id": "T-203",
+      "title": "place_order must reject empty orders",
+      "status": "open",
+      "release": "R-2.0",
+      "assignee": "agent",
+      "blocked_by": [],
+      "labels": [
+        "bug",
+        "agent-ready"
+      ],
+      "description": "place_order(inv, []) returns 0.0; it must raise ValueError('empty order'). Fix in shelfy/orders.py.",
+      "test": "capstone_tests/test_t203.py"
     }
   ]
 }

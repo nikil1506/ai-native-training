@@ -1,0 +1,26 @@
+{
+  "should_trigger": [
+    "Generate release notes for v0.2.0",
+    "Write a changelog between v0.1.0 and v0.2.0",
+    "What's new in 0.2.0? Write it up for users",
+    "Create release notes from the merged PRs since the last tag",
+    "Draft the changelog for the next release",
+    "Turn the PRs between two tags into release notes",
+    "Prepare user-facing notes for the 0.2.0 release",
+    "Make a CHANGELOG entry for version 0.2.0",
+    "Summarize what shipped between v0.1.0 and v0.2.0 as release notes",
+    "I need release notes grouped into added, fixed and changed"
+  ],
+  "should_not_trigger": [
+    "Write a PR description for this branch",
+    "Review this diff for bugs",
+    "Write a commit message",
+    "Summarize this diff",
+    "Bump the version number to 0.3.0",
+    "Tag the current commit as v0.3.0",
+    "Explain what a git tag is",
+    "Check my code against team standards",
+    "List the files changed in the last commit",
+    "Fix the discount rounding bug"
+  ]
+}

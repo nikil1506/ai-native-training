@@ -13,8 +13,6 @@ class Inventory:
         self._stock[sku] = self._stock.get(sku, 0) + qty
 
     def remove(self, sku: str, qty: int) -> None:
-        if self._stock.get(sku, 0) < qty:
-            raise ValueError("insufficient stock")
         self._stock[sku] -= qty
 
     def get(self, sku: str) -> int:

@@ -6,3 +6,6 @@ starter/**/runs/
 starter/eval/reports/
 starter/eval/traces/
 starter/vulnerable-agent/tool-calls.log
+
+# Instructor-only material (kept on the main branch)
+facilitator/

@@ -1,3 +1,5 @@
+> **Student branch.** Instructor-only material (answer keys, reference solutions, grading sheets) is not part of this branch. It lives on `main` under `facilitator/`.
+
 # shelfy: practice repo for the Agentic SDLC training
 
 A tiny inventory/orders library (Python 3.10+, stdlib only). It is the sandbox for
@@ -15,7 +17,6 @@ A tiny inventory/orders library (Python 3.10+, stdlib only). It is the sandbox f
 | `capstone_tickets/` + `capstone_tests/` | Sessions 5-6: 3 tickets, each with a failing test |
 | `.claude/skills/commit-helper/` | Session 1 demo: finished skill with a known failure |
 | `harness/`, `docs/` | Reference agent harness (Ollama), class guide, capstone contract |
-| `facilitator/` | answer keys, red-team list. **Hide from trainees** |
 | `.github/workflows/agent-pr-description.yml` | Session 5 CI job template |
 | branch `review-lab/seeded-bugs` | Session 1: 5 seeded bugs for the review skill |
 | tags `v0.1.0`, `v0.2.0` | Session 1: changelog generator |

@@ -1,0 +1,18 @@
+# Session 5 template: fill in the TODOs live. Not runnable until configured.
+name: agent-pr-description
+on:
+  pull_request:
+    types: [opened]   # not `synchronize`: idempotency, see below
+permissions:
+  contents: read
+  pull-requests: write   # least privilege
+jobs:
+  describe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      # TODO: install agent CLI; run headless with a max-turns/budget cap and
+      #       restricted allowed-tools; save trace to runs/ and upload as artifact.
+      # TODO: idempotency: update the existing bot comment (marker <!-- pr-desc -->) instead of posting a new one.

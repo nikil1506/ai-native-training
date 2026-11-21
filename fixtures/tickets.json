@@ -1,0 +1,354 @@
+{
+  "tickets": [
+    {
+      "id": "T-101",
+      "title": "Fix SKU regex",
+      "status": "in_progress",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-102",
+      "title": "Add low-stock alert",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-103",
+      "title": "CSV export header",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [
+        "T-101"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-104",
+      "title": "Order total rounding",
+      "status": "open",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-105",
+      "title": "Bulk import errors",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [
+        "T-104"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-106",
+      "title": "Add reorder point",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-107",
+      "title": "Dashboard crash on empty stock",
+      "status": "in_progress",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-108",
+      "title": "Upgrade tooling",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [
+        "T-106"
+      ],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-109",
+      "title": "Tax rate config",
+      "status": "done",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-110",
+      "title": "Discount stacking",
+      "status": "blocked",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-111",
+      "title": "Audit log",
+      "status": "in_progress",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-112",
+      "title": "Docs for API",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [
+        "T-111"
+      ],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-113",
+      "title": "Negative stock guard",
+      "status": "in_progress",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-114",
+      "title": "Supplier model",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-115",
+      "title": "Barcode scan",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [
+        "T-113"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-116",
+      "title": "Slow report query",
+      "status": "open",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-117",
+      "title": "Locale formatting",
+      "status": "in_progress",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-118",
+      "title": "Retry on failure",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-119",
+      "title": "Pagination",
+      "status": "blocked",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [
+        "T-117"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-120",
+      "title": "Webhook on low stock",
+      "status": "open",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-121",
+      "title": "Role checks",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [
+        "T-120"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-122",
+      "title": "Rename module",
+      "status": "blocked",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-123",
+      "title": "Flaky test",
+      "status": "in_progress",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-124",
+      "title": "Cache stock reads",
+      "status": "open",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-125",
+      "title": "Unicode SKUs",
+      "status": "done",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-126",
+      "title": "Export to JSON",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [
+        "T-124"
+      ],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-127",
+      "title": "Backorders",
+      "status": "in_progress",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-128",
+      "title": "Batch remove",
+      "status": "open",
+      "release": "R-1.1",
+      "assignee": "raj",
+      "blocked_by": [],
+      "labels": [
+        "feature"
+      ]
+    },
+    {
+      "id": "T-129",
+      "title": "Timezone bug",
+      "status": "blocked",
+      "release": "R-2.0",
+      "assignee": "lee",
+      "blocked_by": [
+        "T-127"
+      ],
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "T-130",
+      "title": "Cleanup deprecated",
+      "status": "blocked",
+      "release": "R-1.0",
+      "assignee": "ana",
+      "blocked_by": [
+        "T-128"
+      ],
+      "labels": [
+        "feature"
+      ]
+    }
+  ]
+}

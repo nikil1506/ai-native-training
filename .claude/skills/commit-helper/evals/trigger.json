@@ -1,0 +1,5 @@
+{
+  "_note": "KNOWN FAILURE for the demo: the description is so broad it loads on near-misses.",
+  "should_trigger": ["write a commit message for my staged changes", "commit this with a good message"],
+  "should_not_trigger": ["summarize this diff", "explain what git rebase does", "write a PR description", "review my code changes"]
+}
